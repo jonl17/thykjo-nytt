@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Menu from '@cmp/site/Menu'
 import cn from 'classnames'
 
@@ -12,8 +12,14 @@ type PageProps = {
 }
 
 const MainLayout: React.FC<PageProps> = ({ children, pageContext }) => {
-  const bg =
-    pageContext.tags.find((tag: string) => tag.includes('bg-')) ?? 'bg-yellow'
+  const [bg, setBg] = useState('bg-yellow')
+
+  useEffect(() => {
+    setBg(
+      pageContext.tags.find((tag: string) => tag.includes('bg-')) ?? 'bg-yellow'
+    )
+  }, [])
+
   return (
     <main>
       {/* this menu is only available on desktop */}
