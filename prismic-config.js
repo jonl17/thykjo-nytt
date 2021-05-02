@@ -1,4 +1,4 @@
-const { PRISMIC_REPOSITORY_NAME, PRISMIC_ACCESS_TOKEN } = process.env
+const { PRISMIC_REPO_NAME, PRISMIC_ACCESS_TOKEN } = process.env
 
 const schemas = {
   page: require('./src/data/schemas/page.json'),
@@ -9,7 +9,7 @@ const schemas = {
 }
 
 module.exports = {
-  repositoryName: PRISMIC_REPOSITORY_NAME,
+  repositoryName: PRISMIC_REPO_NAME,
   accessToken: PRISMIC_ACCESS_TOKEN,
   defaultLanguage: 'en-us',
   langs: ['en-us'],
