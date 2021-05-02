@@ -1,9 +1,19 @@
 .menu {
-  &__transition {
-  }
-
   &__item {
+    transition: flex-grow 0.2s ease-out;
     width: 100px;
+    min-height: 100vh;
     cursor: pointer;
+
+    &--active {
+      flex-grow: 1;
+      cursor: auto;
+    }
+
+    &__nav {
+      position: fixed;
+      margin-left: 32px;
+      margin-top: 30px;
+    }
   }
 }

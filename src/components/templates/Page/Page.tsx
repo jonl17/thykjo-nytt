@@ -12,7 +12,7 @@ const Page = ({ data }: { data: any }) => {
 
   return (
     <div
-      className={cn('page h-100 m-auto relative', `page__${bg} noise`, {
+      className={cn('page h-100 m-auto relative', {
         'page--inverted': page.uid === 'frontpage',
       })}
     >

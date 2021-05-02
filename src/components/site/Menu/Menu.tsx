@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery, Link, navigate } from 'gatsby'
-import '@src/prismic/fragments/menu'
+import '@src/data/fragments/menu'
 import { menuResolver, PageInterface } from '@src/data/resolvers'
 import cn from 'classnames'
 import { useLocation } from '@reach/router'
@@ -32,9 +32,8 @@ const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
 
   return (
     <div
-      className={cn('menu-transition', {
-        'inactive-menu-item cursor-pointer': !active,
-        'flex-1 cursor-auto': active,
+      className={cn('menu__item', `page__${page.bg} noise`, {
+        'menu__item--active': active,
       })}
       onClick={() => (active ? null : navigate(page.url))}
     >
@@ -42,9 +41,8 @@ const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
         children
       ) : (
         <Link to={page.url}>
-          <div className='w-full h-full pt-8 relative flex justify-center rotate'>
-            <Icon className='fixed hidden lg:block' type={findIcon[page.uid]} />
-            <h2 className='text-yellow-2 lg:hidden'>{page.title}</h2>
+          <div>
+            <Icon className='menu__item__nav' type={findIcon[page.uid]} />
           </div>
         </Link>
       )}
@@ -56,7 +54,7 @@ const Menu: React.FC<{ ctx: any }> = ({ children, ctx }) => {
   const menu = useGetMenu()
 
   return (
-    <div className='flex flex-col lg:flex-row min-h-screen'>
+    <div className='d-flex min-h-screen'>
       {menu.pages.map(page => (
         <MenuItem key={page.id} page={page}>
           {children}
