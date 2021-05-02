@@ -1,6 +1,7 @@
 import React from 'react'
 import Program from './Program'
 import Heading from './Heading'
+import RichText from './RichText'
 
 type SliceProps = {
   slice_type: string
@@ -18,6 +19,12 @@ const findProps = (slice: any) => {
       return {
         heading: slice.primary.heading.text,
       }
+    case 'rich_text':
+      return {
+        html: slice.primary.text.html,
+        paragraphStyle: slice.primary.paragraph_style,
+        fontSize: slice.primary.font_size,
+      }
 
     default:
       return slice
@@ -28,6 +35,7 @@ const SliceMapping = ({ slice }: { slice: SliceProps }) => {
   const sliceTypes: { [key: string]: React.ElementType } = {
     program: Program,
     heading: Heading,
+    rich_text: RichText,
   }
 
   const Cmp = sliceTypes[slice.slice_type]

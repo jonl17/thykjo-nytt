@@ -1,0 +1,7 @@
+.rich-text {
+  @include media-breakpoint-up('lg') {
+    &--slim {
+      width: 50%;
+    }
+  }
+}

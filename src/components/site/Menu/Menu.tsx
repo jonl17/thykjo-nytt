@@ -54,7 +54,7 @@ const Menu: React.FC<{ ctx: any }> = ({ children, ctx }) => {
   const menu = useGetMenu()
 
   return (
-    <div className='d-flex min-h-screen'>
+    <div className='d-flex'>
       {menu.pages.map(page => (
         <MenuItem key={page.id} page={page}>
           {children}

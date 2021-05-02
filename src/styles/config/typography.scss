@@ -35,6 +35,11 @@ body {
   h1 {
     font-size: 60px;
     line-height: 78px;
+
+    @include media-breakpoint-down('md') {
+      font-size: 35px;
+      line-height: 42px;
+    }
   }
 
   h2 {
@@ -53,14 +58,16 @@ body {
   }
 
   .parag {
-    &--small {
-      font-size: 16px;
-      line-height: 20px;
-    }
+    @include media-breakpoint-up('lg') {
+      &--small {
+        font-size: 16px;
+        line-height: 20px;
+      }
 
-    &--large {
-      font-size: 24px;
-      line-height: 33px;
+      &--large {
+        font-size: 24px;
+        line-height: 33px;
+      }
     }
   }
 }
