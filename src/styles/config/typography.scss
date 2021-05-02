@@ -1,0 +1,66 @@
+@font-face {
+  font-family: BuenosAires;
+  src: url('./assets/fonts/BuenosAires_Family/BuenosAires-Book.otf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: BuenosAires;
+  src: url('./assets/fonts/BuenosAires_Family/BuenosAires-BookItalic.otf');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: BuenosAires;
+  src: url('./assets/fonts/BuenosAires_Family/BuenosAires-SemiBold.otf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  font-family: BuenosAires;
+  font-size: 18px;
+  line-height: 24.04px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-weight: 500;
+  }
+
+  h1 {
+    font-size: 60px;
+    line-height: 78px;
+  }
+
+  h2 {
+    font-size: 35px;
+    line-height: 42px;
+  }
+
+  h3 {
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  h4 {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .parag {
+    &--small {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &--large {
+      font-size: 24px;
+      line-height: 33px;
+    }
+  }
+}

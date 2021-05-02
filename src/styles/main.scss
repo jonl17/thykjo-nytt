@@ -1,0 +1,12 @@
+@import './config/base.scss';
+@import './config/utils.scss';
+@import './config/typography.scss';
+
+@import './components/page';
+
+body {
+  main {
+    min-height: 100vh;
+    background-color: white;
+  }
+}

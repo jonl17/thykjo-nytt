@@ -1,0 +1,20 @@
+{
+  "Main": {
+    "pages": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "page": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": ["page"],
+              "label": "Page"
+            }
+          }
+        },
+        "label": "Pages"
+      }
+    }
+  }
+}

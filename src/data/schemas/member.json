@@ -1,0 +1,50 @@
+{
+  "Main": {
+    "name": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "Name"
+      }
+    },
+    "role": {
+      "type": "Text",
+      "config": {
+        "label": "Role"
+      }
+    },
+    "bio": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, embed",
+        "allowTargetBlank": true,
+        "label": "Bio"
+      }
+    },
+    "website_url": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Website url"
+      }
+    },
+    "website_label": {
+      "type": "Text",
+      "config": {
+        "label": "Website label",
+        "placeholder": "Make the url look pretty"
+      }
+    },
+    "portrait": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 800,
+          "height": null
+        },
+        "thumbnails": [],
+        "label": "Portrait"
+      }
+    }
+  }
+}
