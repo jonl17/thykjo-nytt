@@ -1,12 +1,15 @@
+@import './config/overrides.scss';
 @import './config/base.scss';
 @import './config/utils.scss';
 @import './config/typography.scss';
+@import './config/colors.scss';
 
 @import './components/page';
+@import './components/contact-information';
+@import './components/frontpage';
 
 body {
   main {
     min-height: 100vh;
-    background-color: white;
   }
 }

@@ -1,0 +1,17 @@
+.page {
+  * {
+    color: $yellow-2;
+  }
+
+  &--inverted {
+    * {
+      color: $black;
+    }
+  }
+
+  &__bg {
+    &-yellow {
+      background-color: $yellow;
+    }
+  }
+}

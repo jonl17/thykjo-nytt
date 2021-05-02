@@ -1,7 +1,7 @@
 import React from 'react'
 
 const MainLayout: React.FC = ({ children }) => {
-  return <main className='noise'>{children}</main>
+  return <main>{children}</main>
 }
 
 export default MainLayout

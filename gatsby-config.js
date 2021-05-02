@@ -19,9 +19,6 @@ const prismicPlugin = {
 }
 
 module.exports = {
-  flags: {
-    FAST_DEV: true,
-  },
   plugins: [
     'gatsby-plugin-typescript',
     {
