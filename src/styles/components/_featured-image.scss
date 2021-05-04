@@ -1,0 +1,52 @@
+//place-items-center py-10 absolute top-0 left-0 h-screen w-full z-50
+
+@import '../animations.scss';
+
+.featured-image-desktop {
+  @include media-breakpoint-down('md') {
+    display: none;
+  }
+
+  z-index: 50;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+
+  button {
+    background: transparent;
+    outline: 0;
+    border: none;
+    transition: transform 0.2s;
+    position: absolute;
+
+    &:hover {
+      transform: rotate(3deg);
+    }
+  }
+
+  img {
+    height: 426px;
+    width: 662px;
+    object-fit: cover;
+  }
+
+  &__close-button {
+    position: absolute;
+    top: $spacer;
+    right: $spacer;
+  }
+
+  &--hide {
+    animation: popout 0.5s forwards;
+  }
+}
+
+.featured-image-mobile {
+  img {
+    width: 100%;
+  }
+}

@@ -22,7 +22,7 @@ const MainLayout: React.FC<PageProps> = ({ children, pageContext }) => {
           'bg-yellow'
       )
     }
-  }, [])
+  }, [pageContext])
 
   return (
     <main>
