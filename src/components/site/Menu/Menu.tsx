@@ -6,18 +6,7 @@ import cn from 'classnames'
 import { useLocation } from '@reach/router'
 import Icon from '@cmp/site/Icon'
 import { IconType } from '../Icon/Icon'
-
-const useGetMenu = () => {
-  const data = useStaticQuery(graphql`
-    {
-      prismicMenu(tags: { in: "MAIN_MENU" }) {
-        ...menuFragmentFull
-      }
-    }
-  `)
-
-  return menuResolver(data.prismicMenu)
-}
+import useGetMenu from '@src/hooks/useGetMenu'
 
 const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
   const { pathname } = useLocation()

@@ -1,0 +1,50 @@
+.mobile-menu {
+  height: 66px;
+  width: 100%;
+  background-color: $yellow;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+
+  &__header {
+    height: 66px;
+  }
+
+  &--open {
+    height: 100vh;
+  }
+
+  &__eyes {
+    height: 100%;
+    width: 91px;
+  }
+
+  &__burger {
+    outline: 0;
+    background: transparent;
+    border: none;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &__items {
+    height: 100%;
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
+}
+
+.mobile-menu-item {
+  height: 100%;
+  flex-grow: 1;
+  display: grid;
+  place-items: center;
+
+  &__frontpage {
+    display: grid;
+    place-items: center;
+  }
+}

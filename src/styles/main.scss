@@ -10,9 +10,14 @@
 @import './components/menu';
 @import './components/head';
 @import './components/rich-text';
+@import './components/mobile-menu';
 
 body {
   main {
     min-height: 100vh;
+  }
+
+  a:hover {
+    text-decoration: none;
   }
 }
