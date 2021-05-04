@@ -24,7 +24,7 @@ const FeaturedImage = ({ url, alt }: Props) => {
             <div className='position-relative'>
               <Icon
                 className='featured-image-desktop__close-button'
-                type='close'
+                type='burgerEx'
               />
               <img
                 className='object-cover object-center w-full h-full'
