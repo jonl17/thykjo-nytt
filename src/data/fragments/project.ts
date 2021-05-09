@@ -31,41 +31,6 @@ export const fragment = graphql`
         ... on PrismicProjectBodyHeading {
           ...projectHeadingSlice
         }
-        ... on PrismicProjectBodyFeatures {
-          ...projectFeaturesSlice
-        }
-      }
-    }
-  }
-
-  fragment projectFeaturesSlice on PrismicProjectBodyFeatures {
-    slice_type
-    id
-    items {
-      name
-      text {
-        html
-      }
-      image_one {
-        url
-        alt
-        fluid {
-          ...GatsbyPrismicImageFluid
-        }
-      }
-      image_two {
-        alt
-        url
-        fluid {
-          ...GatsbyPrismicImageFluid
-        }
-      }
-      image_three {
-        alt
-        url
-        fluid {
-          ...GatsbyPrismicImageFluid
-        }
       }
     }
   }

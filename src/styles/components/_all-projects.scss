@@ -1,0 +1,11 @@
+.all-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: $spacer * 3;
+
+  img {
+    width: 100%;
+    height: 331px;
+    object-fit: cover;
+  }
+}
