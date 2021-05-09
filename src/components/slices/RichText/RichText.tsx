@@ -9,7 +9,6 @@ type Props = {
 }
 
 const RichText = ({ html, paragraphStyle, fontSize }: Props) => {
-  console.log(paragraphStyle, fontSize)
   return (
     <Fade up distance='25px' duration={500}>
       <div

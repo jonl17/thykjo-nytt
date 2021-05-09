@@ -1,0 +1,7 @@
+.members {
+  &__member {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacer * 2;
+  }
+}

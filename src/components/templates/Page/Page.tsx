@@ -6,9 +6,12 @@ import SliceMapping from '@cmp/slices/sliceMapping'
 import cn from 'classnames'
 import Head from '@cmp/site/Head'
 import FeaturedImage from '@cmp/site/FeaturedImage'
+import Icon from '@cmp/site/Icon'
+import { useLocation, Match } from '@reach/router'
 
 const Page = ({ data }: { data: any }) => {
   const page = pageResolver(data.prismicPage)
+  const { pathname } = useLocation()
 
   return (
     <div

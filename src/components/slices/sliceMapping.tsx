@@ -2,6 +2,8 @@ import React from 'react'
 import Program from './Program'
 import Heading from './Heading'
 import RichText from './RichText'
+import Members from './Members'
+import { memberResolver } from '@src/data/resolvers'
 
 type SliceProps = {
   slice_type: string
@@ -25,6 +27,13 @@ const findProps = (slice: any) => {
         paragraphStyle: slice.primary.paragraph_style,
         fontSize: slice.primary.font_size,
       }
+    case 'members':
+      return {
+        title: slice.primary.title,
+        members: slice.items.map((item: any) =>
+          memberResolver(item.member.document)
+        ),
+      }
 
     default:
       return slice
@@ -36,6 +45,7 @@ const SliceMapping = ({ slice }: { slice: SliceProps }) => {
     program: Program,
     heading: Heading,
     rich_text: RichText,
+    members: Members,
   }
 
   const Cmp = sliceTypes[slice.slice_type]

@@ -1,3 +1,5 @@
+import { GatsbyImageProps } from 'gatsby-plugin-image'
+
 export type Image = {
   alt: string
   url: string
@@ -13,7 +15,7 @@ export interface PageInterface {
   subtitle: string
   body: any[]
   bg: string
-  featuredImage: Image
+  featuredImage: Image & { fluid: GatsbyImageProps }
 }
 
 export const pageResolver = (node: any): PageInterface => ({

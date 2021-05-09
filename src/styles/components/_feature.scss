@@ -1,0 +1,9 @@
+.feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacer * 2;
+
+  @include media-breakpoint-down('md') {
+    grid-template-columns: 1fr;
+  }
+}

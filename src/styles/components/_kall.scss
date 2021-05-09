@@ -1,0 +1,8 @@
+.kall {
+  position: absolute;
+  top: 0;
+
+  @include media-breakpoint-up('lg') {
+    margin-left: -250px;
+  }
+}
