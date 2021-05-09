@@ -34,7 +34,7 @@ const MobileMenu = () => {
             )}
           </Link>
         ))}
-        <div className='mobile-menu-item px-3'>
+        <div className='mobile-menu-item mobile-menu-item--last px-3'>
           <ContactInformation />
         </div>
       </div>

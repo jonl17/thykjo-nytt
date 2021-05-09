@@ -12,7 +12,8 @@
   }
 
   &--open {
-    height: 100vh;
+    height: 100%;
+    overflow-y: auto;
   }
 
   &__eyes {
@@ -46,5 +47,9 @@
   &__frontpage {
     display: grid;
     place-items: center;
+  }
+
+  &--last {
+    height: 130px;
   }
 }
