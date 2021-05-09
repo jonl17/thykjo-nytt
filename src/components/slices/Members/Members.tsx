@@ -19,8 +19,8 @@ const Members = ({ members }: Props) => {
           {members.map((member, i) => (
             <Feature image={member.portrait} iterator={i} key={i}>
               <div className='w-100'>
-                <h3 className='mb-2'>{member.name.text}</h3>
-                <h4 className='mb-3'>{member.role}</h4>
+                <h3 className='mb-1'>{member.name.text}</h3>
+                <h4 className='mb-2'>{member.role}</h4>
                 <div dangerouslySetInnerHTML={{ __html: member.bio.html }} />
               </div>
             </Feature>

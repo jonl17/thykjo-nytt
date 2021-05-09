@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Menu from '@cmp/site/Menu'
 import cn from 'classnames'
 import MobileMenu from '@cmp/site/MobileMenu'
+import SEO from '@cmp/site/SEO'
 
 type PageProps = {
   pageContext: {
@@ -25,18 +26,21 @@ const MainLayout: React.FC<PageProps> = ({ children, pageContext }) => {
   }, [pageContext])
 
   return (
-    <main>
-      {/* this menu is only available on desktop */}
-      <div className='d-none d-lg-block'>
-        <Menu ctx={pageContext}>{children}</Menu>
-      </div>
+    <>
+      <SEO />
+      <main>
+        {/* this menu is only available on desktop */}
+        <div className='d-none d-lg-block'>
+          <Menu ctx={pageContext}>{children}</Menu>
+        </div>
 
-      {/* mobile version has a more traditional style */}
-      <div className={cn('d-block d-lg-none', `page page__${bg} noise`)}>
-        <MobileMenu />
-        <div className='mobile-page pt-2'>{children}</div>
-      </div>
-    </main>
+        {/* mobile version has a more traditional style */}
+        <div className={cn('d-block d-lg-none', `page page__${bg} noise`)}>
+          <MobileMenu />
+          <div className='mobile-page pt-2'>{children}</div>
+        </div>
+      </main>
+    </>
   )
 }
 

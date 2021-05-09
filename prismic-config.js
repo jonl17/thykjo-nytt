@@ -6,6 +6,7 @@ const schemas = {
   contact_information: require('./src/data/schemas/contact_information.json'),
   menu: require('./src/data/schemas/menu.json'),
   project: require('./src/data/schemas/project.json'),
+  seo: require('./src/data/schemas/seo.json'),
 }
 
 module.exports = {

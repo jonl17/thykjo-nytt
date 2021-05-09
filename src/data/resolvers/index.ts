@@ -126,3 +126,19 @@ export const projectResolver = (node: any): ProjectInterface => ({
   body: node.data.body,
   featuredImage: node.data.featured_image,
 })
+
+export interface SEOInterface {
+  title: string
+  description: string
+  keywords: string
+  image: {
+    url: string
+  }
+  favicon: {
+    url: string
+  }
+}
+
+export const seoResolver = (node: any): SEOInterface => ({
+  ...node.data,
+})
