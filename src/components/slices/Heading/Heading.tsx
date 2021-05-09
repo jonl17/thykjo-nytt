@@ -7,7 +7,7 @@ type Props = {
 
 const Heading = ({ heading }: Props) => (
   <Fade left duration={500} distance='25px'>
-    <h1 className='mb-3 mb-lg-4'>{heading}</h1>
+    <h1 className='mb-2 mb-lg-3'>{heading}</h1>
   </Fade>
 )
 
