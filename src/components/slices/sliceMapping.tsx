@@ -3,7 +3,9 @@ import Program from './Program'
 import Heading from './Heading'
 import RichText from './RichText'
 import Members from './Members'
+import Feature from '@cmp/site/Feature'
 import { memberResolver } from '@src/data/resolvers'
+import Gallery from '@cmp/site/Gallery'
 
 type SliceProps = {
   slice_type: string
@@ -34,6 +36,23 @@ const findProps = (slice: any) => {
           memberResolver(item.member.document)
         ),
       }
+    case 'feature':
+      return {
+        imageRight: slice.primary.image_right,
+        onRenderMedia: () => (
+          <Gallery
+            images={slice.items.map((item: any) => ({
+              url: item.image.url,
+              alt: item.image.alt,
+              caption: item.caption,
+            }))}
+          />
+        ),
+        children: (
+          <div dangerouslySetInnerHTML={{ __html: slice.primary.text.html }} />
+        ),
+        containerClass: 'slice-gap',
+      }
 
     default:
       return slice
@@ -46,6 +65,7 @@ const SliceMapping = ({ slice }: { slice: SliceProps }) => {
     heading: Heading,
     rich_text: RichText,
     members: Members,
+    feature: Feature,
   }
 
   const Cmp = sliceTypes[slice.slice_type]

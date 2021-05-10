@@ -1,7 +1,7 @@
 import React from 'react'
-import { graphql, useStaticQuery, Link, navigate } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import '@src/data/fragments/menu'
-import { menuResolver, PageInterface } from '@src/data/resolvers'
+import { PageInterface } from '@src/data/resolvers'
 import cn from 'classnames'
 import { useLocation } from '@reach/router'
 import Icon from '@cmp/site/Icon'
@@ -50,9 +50,7 @@ const Menu: React.FC<{ ctx: any }> = ({ children, ctx }) => {
         </MenuItem>
       ))}
       {ctx.type === 'project' && (
-        <div className='noise bg-red menu-transition flex-1 text-yellow-2'>
-          {children}
-        </div>
+        <div className='noise project page__bg-red'>{children}</div>
       )}
     </div>
   )

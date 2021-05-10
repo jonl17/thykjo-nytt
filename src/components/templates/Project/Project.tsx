@@ -1,0 +1,33 @@
+import React from 'react'
+import { graphql } from 'gatsby'
+import '@src/data/fragments/project'
+import { projectResolver } from '@src/data/resolvers'
+import Head from '@cmp/site/Head'
+import SliceMapping from '@cmp/slices/sliceMapping'
+import FeaturedImage from '@cmp/site/FeaturedImage'
+
+const Project = ({ data }: { data: any }) => {
+  const project = projectResolver(data.prismicProject)
+
+  return (
+    <div className='page h-100 m-auto position-relative pt-3 container'>
+      <Head title={project.title.text} description={project.type} />
+      <FeaturedImage {...project.featuredImage} />
+      <div className='d-flex flex-wrap w-100'>
+        {project.body.map((slice, i) => (
+          <SliceMapping key={i} slice={slice} />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default Project
+
+export const query = graphql`
+  query($id: String) {
+    prismicProject(id: { eq: $id }) {
+      ...projectFragmentFull
+    }
+  }
+`

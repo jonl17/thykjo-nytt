@@ -3,6 +3,7 @@ import { ProjectInterface, projectResolver } from '@src/data/resolvers'
 import { useStaticQuery, graphql } from 'gatsby'
 import '@src/data/fragments/project'
 import { Fade } from 'react-reveal'
+import { Link } from 'gatsby'
 
 const AllProjects = () => {
   const data = useStaticQuery(graphql`
@@ -22,7 +23,7 @@ const AllProjects = () => {
   return (
     <div className='all-projects slice-gap mt-0'>
       {projects.map((project, i) => (
-        <div key={i}>
+        <Link to={project.url} key={i}>
           <Fade duration={350} up distance='10px'>
             <img
               className='mb-2'
@@ -39,7 +40,7 @@ const AllProjects = () => {
               />
             </div>
           </Fade>
-        </div>
+        </Link>
       ))}
     </div>
   )

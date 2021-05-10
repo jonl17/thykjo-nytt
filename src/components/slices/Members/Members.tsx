@@ -17,7 +17,17 @@ const Members = ({ members }: Props) => {
         </div>
         <div>
           {members.map((member, i) => (
-            <Feature image={member.portrait} iterator={i} key={i}>
+            <Feature
+              onRenderMedia={() => (
+                <img
+                  className='w-100'
+                  src={member.portrait.url}
+                  alt={member.portrait.alt}
+                />
+              )}
+              imageRight={i % 2 === 0}
+              key={i}
+            >
               <div className='w-100'>
                 <h3 className='mb-1'>{member.name.text}</h3>
                 <h4 className='mb-2'>{member.role}</h4>

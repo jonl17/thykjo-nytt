@@ -6,12 +6,10 @@ import SliceMapping from '@cmp/slices/sliceMapping'
 import cn from 'classnames'
 import Head from '@cmp/site/Head'
 import FeaturedImage from '@cmp/site/FeaturedImage'
-import { useLocation } from '@reach/router'
 import { Helmet } from 'react-helmet'
 
 const Page = ({ data }: { data: any }) => {
   const page = pageResolver(data.prismicPage)
-  const { pathname } = useLocation()
 
   return (
     <>

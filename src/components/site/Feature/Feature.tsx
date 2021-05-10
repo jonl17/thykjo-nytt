@@ -1,33 +1,35 @@
 import React from 'react'
 import { Fade } from 'react-reveal'
+import cn from 'classnames'
 
 type Props = {
-  image: {
-    url: string
-    alt: string
-  }
-  iterator: number
+  imageRight: boolean
+  onRenderMedia: () => React.ReactNode
+  containerClass?: string
 }
 
-const Feature: React.FC<Props> = ({ children, image, iterator }) => {
-  const isOdd = iterator % 2 === 0
-
+const Feature: React.FC<Props> = ({
+  children,
+  imageRight,
+  onRenderMedia,
+  containerClass = '',
+}) => {
   const animationConfig = {
     distance: '10px',
     duration: 500,
   }
 
   return (
-    <div className='feature mb-5'>
-      {!isOdd && (
+    <div className={cn('feature mb-5', containerClass)}>
+      {!imageRight && (
         <Fade left {...animationConfig}>
-          <img className='w-100' src={image.url} alt={image.alt} />
+          {onRenderMedia()}
         </Fade>
       )}
       <div className='w-100'>{children}</div>
-      {isOdd && (
+      {imageRight && (
         <Fade right {...animationConfig}>
-          <img className='w-100' src={image.url} alt={image.alt} />{' '}
+          {onRenderMedia()}
         </Fade>
       )}
     </div>

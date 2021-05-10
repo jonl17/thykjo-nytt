@@ -10,6 +10,7 @@ type PageProps = {
     uid: string
     url: string
     tags: string[]
+    type: string
   }
 }
 
@@ -35,7 +36,11 @@ const MainLayout: React.FC<PageProps> = ({ children, pageContext }) => {
         </div>
 
         {/* mobile version has a more traditional style */}
-        <div className={cn('d-block d-lg-none', `page page__${bg} noise`)}>
+        <div
+          className={cn('d-block d-lg-none', `page page__${bg} noise`, {
+            'page__bg-red': pageContext.type === 'project',
+          })}
+        >
           <MobileMenu />
           <div className='mobile-page pt-2'>{children}</div>
         </div>
