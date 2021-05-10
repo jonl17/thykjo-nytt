@@ -19,6 +19,8 @@ const Project = ({ data }: { data: any }) => {
           property='og:description'
           content={project.shortDescription.text}
         />
+        <meta property='image' content={project.featuredImage.url} />
+        <meta property='og:image' content={project.featuredImage.url} />
       </Helmet>
       <div className='page h-100 m-auto position-relative pt-3 container'>
         <Head title={project.title.text} description={project.type} />
