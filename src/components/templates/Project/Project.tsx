@@ -6,9 +6,12 @@ import Head from '@cmp/site/Head'
 import SliceMapping from '@cmp/slices/sliceMapping'
 import FeaturedImage from '@cmp/site/FeaturedImage'
 import { Helmet } from 'react-helmet'
+import { Modal, useModal } from '@cmp/site/Modal'
 
 const Project = ({ data }: { data: any }) => {
   const project = projectResolver(data.prismicProject)
+
+  const { image } = useModal()
 
   return (
     <>
@@ -22,6 +25,7 @@ const Project = ({ data }: { data: any }) => {
         <meta property='image' content={project.featuredImage.url} />
         <meta property='og:image' content={project.featuredImage.url} />
       </Helmet>
+      {image && <Modal />}
       <div className='page h-100 m-auto position-relative pt-3 container'>
         <Head title={project.title.text} description={project.type} />
         <FeaturedImage {...project.featuredImage} />

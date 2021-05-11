@@ -3,6 +3,7 @@ import Menu from '@cmp/site/Menu'
 import cn from 'classnames'
 import MobileMenu from '@cmp/site/MobileMenu'
 import SEO from '@cmp/site/SEO'
+import { Modal } from '@cmp/site/Modal'
 
 type PageProps = {
   pageContext: {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Icon from '@cmp/site/Icon'
 import { Fade } from 'react-reveal'
-import { Modal } from '@cmp/site/Modal'
+import { Modal, useModal } from '@cmp/site/Modal'
 
 type Props = {
   images: {
@@ -16,14 +16,13 @@ type Props = {
 const Gallery = ({ images }: Props) => {
   const [selected, setSelected] = useState(0)
 
+  const { updateImage } = useModal()
+
   return (
     <>
-      <Modal>
-        <img src={images[selected].url} />
-      </Modal>
       <div className='gallery'>
         <Fade spy={selected} duration={500}>
-          <button>
+          <button onClick={() => updateImage(images[selected])}>
             <img
               className='w-100'
               src={images[selected].url}
