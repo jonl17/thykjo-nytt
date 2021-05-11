@@ -24,7 +24,7 @@ const Gallery = ({ images }: Props) => {
         <Fade spy={selected} duration={500}>
           <button onClick={() => updateImage(images[selected])}>
             <img
-              className='w-100'
+              className='w-100 tilt'
               src={images[selected].url}
               alt={images[selected].alt}
             />

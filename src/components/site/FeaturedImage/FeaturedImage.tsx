@@ -19,7 +19,7 @@ const FeaturedImage = ({ url, alt }: Props) => {
           'featured-image-desktop--hide': !visible,
         })}
       >
-        <button onClick={() => setVisible(false)}>
+        <button className='tilt' onClick={() => setVisible(false)}>
           <Fade duration={250} delay={300} up distance='10px'>
             <div className='position-relative'>
               <Icon

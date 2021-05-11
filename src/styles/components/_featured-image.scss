@@ -22,10 +22,6 @@
     border: none;
     transition: transform 0.2s;
     position: absolute;
-
-    &:hover {
-      transform: rotate(3deg);
-    }
   }
 
   img {
