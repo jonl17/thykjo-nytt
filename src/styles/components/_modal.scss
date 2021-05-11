@@ -17,7 +17,7 @@
     right: $spacer * 5;
 
     @include media-breakpoint-down('md') {
-      top: $spacer * 2;
+      top: $spacer * 8;
       right: $spacer * 2;
     }
   }
