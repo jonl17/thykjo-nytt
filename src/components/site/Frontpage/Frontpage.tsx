@@ -9,7 +9,6 @@ const Frontpage = () => {
         <Icon className='w-50 w-lg-100' type='eyes' />
         <div className='text-center w-100'>
           <Icon className='w-75 w-lg-100 mb-md-3' type='logo' />
-          <p>Vefur í vinnslu</p>
         </div>
         <ContactInformation />
       </div>
