@@ -14,7 +14,7 @@
   }
 
   &--open {
-    height: 100%;
+    height: 100vh;
     overflow-y: auto;
   }
 
@@ -34,14 +34,13 @@
   }
 
   &__items {
-    height: 100%;
+    height: calc(100vh - 66px);
     margin-left: -2rem;
     margin-right: -2rem;
   }
 }
 
 .mobile-menu-item {
-  height: 100%;
   flex-grow: 1;
   display: grid;
   place-items: center;
