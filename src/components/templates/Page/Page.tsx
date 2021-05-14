@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { graphql } from 'gatsby'
 import '@src/data/fragments/page'
 import { pageResolver } from '@src/data/resolvers'
@@ -7,9 +7,21 @@ import cn from 'classnames'
 import Head from '@cmp/site/Head'
 import FeaturedImage from '@cmp/site/FeaturedImage'
 import { Helmet } from 'react-helmet'
+import { useEyeballs } from '@src/context/eyeBallContext'
+
+const handleMouse = (x: number, pageWidth: number) => {
+  const pos = (x / pageWidth) * 2
+  const xCord = pos * 50 - 58
+  console.log(xCord)
+  return xCord
+}
 
 const Page = ({ data }: { data: any }) => {
   const page = pageResolver(data.prismicPage)
+
+  let pageRef = useRef()
+
+  const { updateX } = useEyeballs()
 
   return (
     <>
@@ -22,6 +34,10 @@ const Page = ({ data }: { data: any }) => {
           'page--inverted': page.uid === 'frontpage',
           'pt-3 container': page.uid !== 'frontpage',
         })}
+        onMouseMove={e =>
+          updateX(handleMouse(e.screenX, pageRef.current.clientWidth))
+        }
+        ref={pageRef}
       >
         {page.title && <Head title={page.title} description={page.subtitle} />}
         {page.featuredImage.url && <FeaturedImage {...page.featuredImage} />}
