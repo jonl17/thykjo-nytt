@@ -12,7 +12,6 @@ import { useEyeballs } from '@src/context/eyeBallContext'
 const handleMouse = (x: number, pageWidth: number) => {
   const pos = (x / pageWidth) * 2
   const xCord = pos * 50 - 58
-  console.log(xCord)
   return xCord
 }
 

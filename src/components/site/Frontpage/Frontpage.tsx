@@ -6,9 +6,8 @@ import { useEyeballs } from '@src/context/eyeBallContext'
 const Frontpage = () => {
   const { x } = useEyeballs()
 
-  const eyes = document.querySelectorAll('.eye-ball')
-
   useEffect(() => {
+    const eyes = document.querySelectorAll('.eye-ball')
     const eyeArr = Array.from(eyes)
     if (eyeArr.length > 0) {
       eyeArr[0].style.transform = `translateX(${x}px)`
