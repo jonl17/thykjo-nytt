@@ -30,7 +30,7 @@ const MainLayout: React.FC<PageProps> = ({ children, pageContext }) => {
   return (
     <>
       <SEO />
-      <main>
+      <main className={`page__${bg}`}>
         {/* this menu is only available on desktop */}
         <div className='d-none d-lg-block'>
           <Menu ctx={pageContext}>{children}</Menu>
@@ -38,12 +38,12 @@ const MainLayout: React.FC<PageProps> = ({ children, pageContext }) => {
 
         {/* mobile version has a more traditional style */}
         <div
-          className={cn('d-block d-lg-none', `page page__${bg} noise`, {
+          className={cn('d-block d-lg-none', `page  noise`, {
             'page__bg-red': pageContext.type === 'project',
           })}
         >
           <MobileMenu />
-          <div className='mobile-page pt-2'>{children}</div>
+          <div className='mobile-page'>{children}</div>
         </div>
       </main>
     </>
