@@ -34,7 +34,7 @@ const Page = ({ data }: { data: any }) => {
           'pt-3 container': page.uid !== 'frontpage',
         })}
         onMouseMove={e =>
-          updateX(handleMouse(e.screenX, pageRef.current.clientWidth))
+          updateX(handleMouse(e.clientX, window.innerWidth - 200))
         }
         ref={pageRef}
       >
