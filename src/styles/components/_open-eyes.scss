@@ -1,14 +1,11 @@
-@keyframes openEye {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+.open-eyes {
+  height: 200px;
+
+  @include media-breakpoint-down('md') {
+    height: 100px;
   }
 }
 
-.open-eyes {
-  height: 200px;
-  opacity: 0;
-  animation: openEye 0.1s 0.6s forwards;
+.eye-ball {
+  transition: transform 0.1s;
 }
