@@ -4,16 +4,9 @@ import ContactInformation from '@cmp/site/ContactInformation'
 import { useEyeballs } from '@src/context/eyeBallContext'
 
 const Frontpage = () => {
-  const { x } = useEyeballs()
+  const { useMoveEyes } = useEyeballs()
 
-  useEffect(() => {
-    const eyes = document.querySelectorAll('.eye-ball')
-    const eyeArr = Array.from(eyes)
-    if (eyeArr.length > 0) {
-      eyeArr[0].style.transform = `translateX(${x}px)`
-      eyeArr[1].style.transform = `translateX(${x}px)`
-    }
-  }, [x])
+  useMoveEyes('.eye-ball')
 
   return (
     <div className='frontpage h-100 w-100'>
