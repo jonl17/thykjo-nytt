@@ -15,6 +15,8 @@ import {
   DotNoFill,
   DotFill,
   OpenEyes,
+  ClosedEyes,
+  BookLogo,
 } from './svg'
 import cn from 'classnames'
 
@@ -34,6 +36,8 @@ export type IconType =
   | 'dotNoFill'
   | 'dotFill'
   | 'openEyes'
+  | 'closedEyes'
+  | 'bookLogo'
 interface Props {
   type: IconType
   className?: string
@@ -56,6 +60,8 @@ const Icon = ({ type, className }: Props) => {
     dotNoFill: DotNoFill,
     dotFill: DotFill,
     openEyes: OpenEyes,
+    closedEyes: ClosedEyes,
+    bookLogo: BookLogo,
   }
 
   const IconSvg = icons[type]

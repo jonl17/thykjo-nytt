@@ -4,10 +4,31 @@
     display: grid;
     place-items: center;
     height: 100vh;
-    grid-template-rows: 0.5fr 0.5fr 1fr;
 
     @include media-breakpoint-up('lg') {
       grid-template-rows: repeat(3, 1fr);
+    }
+  }
+
+  &__logo {
+    position: relative;
+
+    &--book {
+      position: relative;
+      height: 600px;
+    }
+
+    &--open-eyes {
+      position: absolute;
+      width: 300px;
+      left: 50%;
+      margin-left: -150px;
+      top: 175px;
+
+      @include media-breakpoint-down('md') {
+        height: 100px;
+        position: relative;
+      }
     }
   }
 }
