@@ -1,6 +1,4 @@
 .page {
-  min-height: 100vh;
-
   * {
     color: $yellow-2;
   }
@@ -27,6 +25,5 @@
 }
 
 .mobile-page {
-  margin-top: 66px;
-  min-height: calc(100vh - 66px);
+  padding-top: 66px;
 }

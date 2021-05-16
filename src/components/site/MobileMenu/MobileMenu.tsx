@@ -26,8 +26,7 @@ const MobileMenu = () => {
           >
             {page.uid === 'frontpage' ? (
               <div className='mobile-menu-item__frontpage'>
-                <Icon className='w-50' type='eyes' />
-                <Icon className='w-75' type='logo' />
+                <Icon className='w-75' type='eyes' />
               </div>
             ) : (
               <h2>{page.title}</h2>
@@ -43,8 +42,8 @@ const MobileMenu = () => {
 
   return (
     <div
-      className={cn('mobile-menu noise px-3', {
-        'mobile-menu--open': open,
+      className={cn('mobile-menu px-3', {
+        'mobile-menu--open noise': open,
       })}
     >
       <div className='mobile-menu__header d-flex align-items-center justify-content-between'>

@@ -1,9 +1,9 @@
-// grid place-items-center grid-cols-1 grid-rows-3 lg:h-screen
 .frontpage {
   &__grid {
     display: grid;
     place-items: center;
     height: 100vh;
+    overflow: hidden;
 
     @include media-breakpoint-up('lg') {
       grid-template-rows: auto 200px;
@@ -24,4 +24,10 @@
       pointer-events: none;
     }
   }
+}
+
+.mobile-frontpage {
+  min-height: calc(100vh - 66px);
+  display: grid;
+  grid-template-rows: 150px 1fr 1fr;
 }
