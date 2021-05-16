@@ -3,10 +3,22 @@
   width: 300px;
   left: 50%;
   margin-left: -150px;
-  top: 175px;
+  top: -35px;
 
   @include media-breakpoint-down('md') {
     height: 100px;
     position: relative;
+  }
+}
+
+.eye {
+  z-index: 99;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  * {
+    z-index: 99;
   }
 }

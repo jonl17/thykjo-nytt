@@ -21,6 +21,7 @@
     &--book {
       position: relative;
       height: 600px;
+      pointer-events: none;
     }
   }
 }

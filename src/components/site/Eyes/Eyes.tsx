@@ -4,7 +4,7 @@ import Icon from '@cmp/site/Icon'
 const Eyes = () => {
   return (
     <div>
-      <Icon className='eyes' type='openEyes' />
+      <Icon className='eyes' type='dynamicEyes' />
     </div>
   )
 }
