@@ -6,29 +6,20 @@
     height: 100vh;
 
     @include media-breakpoint-up('lg') {
-      grid-template-rows: repeat(3, 1fr);
+      grid-template-rows: auto 200px;
     }
   }
 
-  &__logo {
+  &__desktop-logos {
     position: relative;
+
+    @include media-breakpoint-down('md') {
+      display: none;
+    }
 
     &--book {
       position: relative;
       height: 600px;
-    }
-
-    &--open-eyes {
-      position: absolute;
-      width: 300px;
-      left: 50%;
-      margin-left: -150px;
-      top: 175px;
-
-      @include media-breakpoint-down('md') {
-        height: 100px;
-        position: relative;
-      }
     }
   }
 }
