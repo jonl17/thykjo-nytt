@@ -5,7 +5,9 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 40px);
     place-items: center;
+    justify-content: center;
+    gap: $spacer;
   }
 }

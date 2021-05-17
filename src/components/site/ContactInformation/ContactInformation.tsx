@@ -20,7 +20,7 @@ const ContactInformation = () => {
       <div className='contact-information__grid mb-2'>
         {information.socialMedia.map(item => (
           <a key={item.url} href={item.url} target='_blank'>
-            <Icon type={item.platform} />
+            <Icon className='w-100' type={item.platform} />
           </a>
         ))}
       </div>

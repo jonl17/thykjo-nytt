@@ -21,7 +21,7 @@ const Gallery = ({ images }: Props) => {
   return (
     <>
       <div className='gallery'>
-        <Fade spy={selected} duration={500}>
+        <Fade spy={selected} duration={350} left distance='5px'>
           <button onClick={() => updateImage(images[selected])}>
             <img
               className='w-100 tilt'

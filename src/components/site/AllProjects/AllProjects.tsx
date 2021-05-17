@@ -26,7 +26,7 @@ const AllProjects = () => {
         <Link to={project.url} key={i}>
           <Fade duration={350} up distance='10px'>
             <img
-              className='mb-2'
+              className='tilt mb-2'
               src={project.featuredImage.url}
               alt={project.featuredImage.alt}
             />

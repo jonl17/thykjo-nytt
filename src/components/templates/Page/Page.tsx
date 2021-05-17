@@ -37,7 +37,7 @@ const Page = ({ data }: { data: any }) => {
       <div
         className={cn('page h-100 m-auto position-relative', {
           'page--inverted': page.uid === 'frontpage',
-          'pt-3 container': page.uid !== 'frontpage',
+          'pt-3 pr-2 container': page.uid !== 'frontpage',
         })}
         onMouseMove={e =>
           updateX(handleMouse(e.clientX, window.innerWidth - MENU_OFFSET))
