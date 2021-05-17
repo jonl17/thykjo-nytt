@@ -4,6 +4,7 @@ import cn from 'classnames'
 import MobileMenu from '@cmp/site/MobileMenu'
 import SEO from '@cmp/site/SEO'
 import { Modal } from '@cmp/site/Modal'
+import { Helmet } from 'react-helmet'
 
 type PageProps = {
   pageContext: {
@@ -30,7 +31,19 @@ const MainLayout: React.FC<PageProps> = ({ children, pageContext }) => {
   return (
     <>
       <SEO />
-      <main className={`page__${bg}`}>
+      <Helmet>
+        <html
+          className={cn(`page__${bg} noise`, {
+            'page__bg-red noise': pageContext.type === 'project',
+          })}
+        />
+        <body
+          className={cn(`page__${bg} noise`, {
+            'page__bg-red noise': pageContext.type === 'project',
+          })}
+        />
+      </Helmet>
+      <main>
         {/* this menu is only available on desktop */}
         <div className='d-none d-lg-block'>
           <Menu ctx={pageContext}>{children}</Menu>
@@ -38,8 +51,8 @@ const MainLayout: React.FC<PageProps> = ({ children, pageContext }) => {
 
         {/* mobile version has a more traditional style */}
         <div
-          className={cn('d-block d-lg-none', `page  noise`, {
-            'page__bg-red': pageContext.type === 'project',
+          className={cn('d-block d-lg-none', 'page', {
+            'page__bg-red noise': pageContext.type === 'project',
           })}
         >
           <MobileMenu />
