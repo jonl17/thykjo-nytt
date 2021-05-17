@@ -7,6 +7,7 @@
   top: 0;
   z-index: 99;
   transition: height 0.2s;
+  padding-bottom: 66px;
 
   &__header {
     height: 66px;
@@ -42,8 +43,9 @@
 
 .mobile-menu-item {
   flex-grow: 1;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &__frontpage {
     display: grid;
