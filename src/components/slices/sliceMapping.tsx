@@ -4,8 +4,9 @@ import Heading from './Heading'
 import RichText from './RichText'
 import Members from './Members'
 import Feature from '@cmp/site/Feature'
-import { memberResolver } from '@src/data/resolvers'
+import { memberResolver, projectResolver } from '@src/data/resolvers'
 import Gallery from '@cmp/site/Gallery'
+import Projects from '@cmp/slices/Projects'
 
 type SliceProps = {
   slice_type: string
@@ -53,6 +54,12 @@ const findProps = (slice: any) => {
         ),
         containerClass: 'slice-gap',
       }
+    case 'projects':
+      return {
+        projects: slice.items.map((item: any) =>
+          projectResolver(item.project.document)
+        ),
+      }
 
     default:
       return slice
@@ -66,6 +73,7 @@ const SliceMapping = ({ slice }: { slice: SliceProps }) => {
     rich_text: RichText,
     members: Members,
     feature: Feature,
+    projects: Projects,
   }
 
   const Cmp = sliceTypes[slice.slice_type]

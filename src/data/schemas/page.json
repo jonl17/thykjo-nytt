@@ -37,7 +37,8 @@
         "labels": {
           "program": [],
           "members": [],
-          "heading": []
+          "heading": [],
+          "projects": []
         },
         "choices": {
           "program": {
@@ -130,6 +131,24 @@
               }
             },
             "repeat": {}
+          },
+          "projects": {
+            "type": "Slice",
+            "fieldset": "Projects",
+            "description": "Displays projects",
+            "icon": "border_all",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "project": {
+                "type": "Link",
+                "config": {
+                  "select": "document",
+                  "customtypes": ["project"],
+                  "label": "Project"
+                }
+              }
+            }
           }
         }
       }
