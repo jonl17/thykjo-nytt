@@ -1,12 +1,15 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import Icon from '@cmp/site/Icon'
+import { FluidObject } from 'gatsby-image'
+import Img from 'gatsby-image'
 
-type ModalImageType = {
+export type ModalImageType = {
   alt: string
   url: string
   caption: {
     html: string
   }
+  fluid: FluidObject
 }
 
 const ModalContext = createContext<{
@@ -49,7 +52,13 @@ const Modal: React.FC = ({ children }) => {
 
         {image && (
           <div className='p-4 modal-window__image-container'>
-            <img src={image.url} alt={image.alt} />
+            <div className='modal-window__image'>
+              <Img
+                className='h-100 w-100'
+                fluid={image.fluid}
+                alt={image.alt}
+              />
+            </div>
             <p>HELLo</p>
           </div>
         )}

@@ -6,11 +6,34 @@
     background: transparent;
   }
 
-  img {
-    object-fit: cover;
+  &__image-wrap {
     height: 350px;
+    width: 350px;
+    position: relative;
+
+    @include media-breakpoint-down('md') {
+      width: 100%;
+      height: 350px;
+      position: static;
+    }
+  }
+
+  &__image {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &--active {
+      opacity: 1;
+    }
   }
 
   &__controls {
+    @include media-breakpoint-down('md') {
+      position: absolute;
+    }
   }
 }

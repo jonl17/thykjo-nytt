@@ -1,4 +1,4 @@
-import { GatsbyImageProps } from 'gatsby-plugin-image'
+import { GatsbyImageProps } from 'gatsby-image'
 
 export type Image = {
   alt: string

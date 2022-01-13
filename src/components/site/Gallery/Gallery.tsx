@@ -1,16 +1,12 @@
 import React, { useState } from 'react'
 import Icon from '@cmp/site/Icon'
-import { Fade } from 'react-reveal'
-import { Modal, useModal } from '@cmp/site/Modal'
+import { useModal } from '@cmp/site/Modal'
+import Img from 'gatsby-image'
+import { ModalImageType } from '../Modal/Modal'
+import cn from 'classnames'
 
 type Props = {
-  images: {
-    alt: string
-    url: string
-    caption: {
-      html: string
-    }
-  }[]
+  images: ModalImageType[]
 }
 
 const Gallery = ({ images }: Props) => {
@@ -18,21 +14,32 @@ const Gallery = ({ images }: Props) => {
 
   const { updateImage } = useModal()
 
+  const focusedImage = images[selected]
+
   return (
     <>
       <div className='gallery'>
-        <Fade spy={selected} duration={350} left distance='5px'>
-          <button onClick={() => updateImage(images[selected])}>
-            <img
-              className='w-100 tilt'
-              src={images[selected].url}
-              alt={images[selected].alt}
-            />
-          </button>
-        </Fade>
+        <button onClick={() => updateImage(images[selected])}>
+          <div className='gallery__image-wrap'>
+            {images.map((image, key) => (
+              <div
+                className={cn('tilt gallery__image', {
+                  'gallery__image--active': key === selected,
+                })}
+              >
+                <Img
+                  key={key}
+                  className='h-100 w-100'
+                  fluid={image.fluid}
+                  alt={image.alt}
+                />
+              </div>
+            ))}
+          </div>
+        </button>
         <div className='gallery__controls w-100 d-flex justify-content-center align-items-center'>
           {images.length > 1 &&
-            images.map((item, index) => (
+            images.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setSelected(index)}

@@ -30,6 +30,9 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    'gatsby-image',
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {

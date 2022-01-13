@@ -51,6 +51,9 @@ export const fragment = graphql`
       image {
         alt
         url
+        fluid {
+          ...GatsbyPrismicImageFluid
+        }
       }
       caption {
         html
@@ -73,6 +76,9 @@ export const fragment = graphql`
       image {
         alt
         url
+        fluid {
+          ...GatsbyPrismicImageFluid
+        }
       }
       caption {
         text
