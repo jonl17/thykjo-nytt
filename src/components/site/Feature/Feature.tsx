@@ -20,19 +20,29 @@ const Feature: React.FC<Props> = ({
   }
 
   return (
-    <div className={cn('feature mb-5', containerClass)}>
-      {!imageRight && (
+    <>
+      {/* mobile below */}
+      <div className={cn('feature mb-5 d-block d-lg-none', containerClass)}>
         <Fade left {...animationConfig}>
           {onRenderMedia()}
         </Fade>
-      )}
-      <div className='w-100'>{children}</div>
-      {imageRight && (
-        <Fade right {...animationConfig}>
-          {onRenderMedia()}
-        </Fade>
-      )}
-    </div>
+        <div className='w-100 mt-3'>{children}</div>
+      </div>
+      {/* desktop below */}
+      <div className={cn('feature mb-5 d-none d-lg-flex', containerClass)}>
+        {!imageRight && (
+          <Fade left {...animationConfig}>
+            {onRenderMedia()}
+          </Fade>
+        )}
+        <div className='w-100'>{children}</div>
+        {imageRight && (
+          <Fade right {...animationConfig}>
+            {onRenderMedia()}
+          </Fade>
+        )}
+      </div>
+    </>
   )
 }
 
