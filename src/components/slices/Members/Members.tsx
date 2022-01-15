@@ -23,6 +23,7 @@ const Members = ({ members }: Props) => {
                   className='w-100'
                   src={member.portrait.url}
                   alt={member.portrait.alt}
+                  style={{ objectFit: 'cover' }}
                 />
               )}
               imageRight={i % 2 === 0}
