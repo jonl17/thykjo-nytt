@@ -29,7 +29,7 @@ const Feature: React.FC<Props> = ({
         <div className='w-100 mt-3'>{children}</div>
       </div>
       {/* desktop below */}
-      <div className={cn('feature mb-5 d-none d-lg-flex', containerClass)}>
+      <div className={cn('feature mb-5', containerClass)}>
         {!imageRight && (
           <Fade left {...animationConfig}>
             {onRenderMedia()}
