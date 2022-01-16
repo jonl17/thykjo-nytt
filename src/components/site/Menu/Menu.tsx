@@ -31,7 +31,9 @@ const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
       ) : (
         <Link to={page.url}>
           <div>
-            <Icon className='menu__item__nav' type={findIcon[page.uid]} />
+            {findIcon[page.uid] && (
+              <Icon className='menu__item__nav' type={findIcon[page.uid]} />
+            )}
           </div>
         </Link>
       )}
