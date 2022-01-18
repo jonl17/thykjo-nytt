@@ -15,6 +15,7 @@ export const fragment = graphql`
       featured_image {
         alt
         url
+        gatsbyImageData
       }
       short_description {
         text
@@ -22,23 +23,23 @@ export const fragment = graphql`
       }
       type
       body {
-        ... on PrismicProjectBodyRichText {
+        ... on PrismicProjectDataBodyRichText {
           ...projectRichTextSlice
         }
-        ... on PrismicProjectBodyGallery {
+        ... on PrismicProjectDataBodyGallery {
           ...projectGallerySlice
         }
-        ... on PrismicProjectBodyHeading {
+        ... on PrismicProjectDataBodyHeading {
           ...projectHeadingSlice
         }
-        ... on PrismicProjectBodyFeature {
+        ... on PrismicProjectDataBodyFeature {
           ...projectFeatureSlice
         }
       }
     }
   }
 
-  fragment projectFeatureSlice on PrismicProjectBodyFeature {
+  fragment projectFeatureSlice on PrismicProjectDataBodyFeature {
     slice_type
     id
     primary {
@@ -51,9 +52,7 @@ export const fragment = graphql`
       image {
         alt
         url
-        fluid {
-          ...GatsbyPrismicImageFluid
-        }
+        gatsbyImageData
       }
       caption {
         html
@@ -61,7 +60,7 @@ export const fragment = graphql`
     }
   }
 
-  fragment projectHeadingSlice on PrismicProjectBodyHeading {
+  fragment projectHeadingSlice on PrismicProjectDataBodyHeading {
     slice_type
     primary {
       heading {
@@ -70,15 +69,13 @@ export const fragment = graphql`
     }
   }
 
-  fragment projectGallerySlice on PrismicProjectBodyGallery {
+  fragment projectGallerySlice on PrismicProjectDataBodyGallery {
     slice_type
     items {
       image {
         alt
         url
-        fluid {
-          ...GatsbyPrismicImageFluid
-        }
+        gatsbyImageData
       }
       caption {
         text
@@ -87,7 +84,7 @@ export const fragment = graphql`
     }
   }
 
-  fragment projectRichTextSlice on PrismicProjectBodyRichText {
+  fragment projectRichTextSlice on PrismicProjectDataBodyRichText {
     slice_type
     primary {
       font_size

@@ -46,7 +46,7 @@ const findProps = (slice: any) => {
               url: item.image.url,
               alt: item.image.alt,
               caption: item.caption,
-              fluid: item.image.fluid,
+              gatsbyImageData: item.image.gatsbyImageData,
             }))}
           />
         ),

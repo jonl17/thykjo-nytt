@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import '@src/data/fragments/project'
 import { Fade } from 'react-reveal'
 import { Link } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 const AllProjects = () => {
   const data = useStaticQuery(graphql`
@@ -25,9 +26,9 @@ const AllProjects = () => {
       {projects.map((project, i) => (
         <Link to={project.url} key={i}>
           <Fade duration={350} up distance='10px'>
-            <img
-              className='tilt mb-2'
-              src={project.featuredImage.url}
+            <GatsbyImage
+              className='tilt mb-2 image'
+              image={project.featuredImage.gatsbyImageData}
               alt={project.featuredImage.alt}
             />
             <div>

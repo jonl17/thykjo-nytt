@@ -1,6 +1,4 @@
 .gallery {
-  width: 400px;
-
   button {
     outline: 0;
     border: none;
@@ -10,7 +8,7 @@
 
   &__image-wrap {
     height: 350px;
-    width: 400px;
+    width: 100%;
     position: relative;
 
     @include media-breakpoint-down('md') {
@@ -25,8 +23,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
 
     &--active {
       opacity: 1;

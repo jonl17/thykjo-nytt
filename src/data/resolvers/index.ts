@@ -1,8 +1,9 @@
-import { GatsbyImageProps } from 'gatsby-image'
+import { IGatsbyImageData } from 'gatsby-plugin-image'
 
-export type Image = {
+export type IImage = {
   alt: string
   url: string
+  gatsbyImageData: IGatsbyImageData
 }
 
 export interface PageInterface {
@@ -15,7 +16,7 @@ export interface PageInterface {
   subtitle: string
   body: any[]
   bg: string
-  featuredImage: Image & { fluid: GatsbyImageProps }
+  featuredImage: IImage
 }
 
 export const pageResolver = (node: any): PageInterface => ({
@@ -70,7 +71,7 @@ export interface MemberInterface {
     text: string
     html: string
   }
-  portrait: Image
+  portrait: IImage
   role: string
   website: {
     url: string
@@ -108,7 +109,7 @@ export interface ProjectInterface {
     html: string
   }
   type: string
-  featuredImage: Image
+  featuredImage: IImage
   bg: string
   body: any[]
 }

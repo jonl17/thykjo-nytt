@@ -10,6 +10,7 @@ export const fragment = graphql`
       portrait {
         alt
         url
+        gatsbyImageData
       }
       role
       website_label

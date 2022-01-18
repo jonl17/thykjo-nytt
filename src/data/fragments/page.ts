@@ -17,28 +17,29 @@ export const fragment = graphql`
       featured_image {
         alt
         url
+        gatsbyImageData
       }
       body {
-        ... on PrismicPageBodyProgram {
+        ... on PrismicPageDataBodyProgram {
           ...programSliceFragment
         }
-        ... on PrismicPageBodyRichText {
+        ... on PrismicPageDataBodyRichText {
           ...richTextSliceFragment
         }
-        ... on PrismicPageBodyMembers {
+        ... on PrismicPageDataBodyMembers {
           ...membersSliceFragment
         }
-        ... on PrismicPageBodyHeading {
+        ... on PrismicPageDataBodyHeading {
           ...pageHeadingSlice
         }
-        ... on PrismicPageBodyProjects {
+        ... on PrismicPageDataBodyProjects {
           ...pageProjectsSlice
         }
       }
     }
   }
 
-  fragment pageProjectsSlice on PrismicPageBodyProjects {
+  fragment pageProjectsSlice on PrismicPageDataBodyProjects {
     slice_type
     id
     items {
@@ -52,7 +53,7 @@ export const fragment = graphql`
     }
   }
 
-  fragment pageHeadingSlice on PrismicPageBodyHeading {
+  fragment pageHeadingSlice on PrismicPageDataBodyHeading {
     slice_type
     primary {
       heading {
@@ -61,7 +62,7 @@ export const fragment = graphql`
     }
   }
 
-  fragment membersSliceFragment on PrismicPageBodyMembers {
+  fragment membersSliceFragment on PrismicPageDataBodyMembers {
     slice_type
     primary {
       title {
@@ -80,7 +81,7 @@ export const fragment = graphql`
     }
   }
 
-  fragment richTextSliceFragment on PrismicPageBodyRichText {
+  fragment richTextSliceFragment on PrismicPageDataBodyRichText {
     slice_type
     primary {
       font_size
@@ -91,7 +92,7 @@ export const fragment = graphql`
     }
   }
 
-  fragment programSliceFragment on PrismicPageBodyProgram {
+  fragment programSliceFragment on PrismicPageDataBodyProgram {
     slice_type
     primary {
       program_name

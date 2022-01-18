@@ -1,5 +1,6 @@
 import { menuResolver } from '@src/data/resolvers'
 import { useStaticQuery, graphql } from 'gatsby'
+import '@src/data/fragments/menu'
 
 const useGetMenu = () => {
   const data = useStaticQuery(graphql`

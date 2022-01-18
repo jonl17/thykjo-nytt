@@ -12,7 +12,7 @@ const prismicPlugin = {
   options: {
     repositoryName,
     accessToken,
-    linkResolver: () => doc => linkResolver(doc),
+    linkResolver,
     schemas,
     lang: '*',
   },
@@ -30,9 +30,9 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
-    'gatsby-image',
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
