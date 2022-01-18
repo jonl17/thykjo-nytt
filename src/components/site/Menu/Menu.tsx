@@ -16,7 +16,8 @@ const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
   const findIcon: { [key: string]: IconType } = {
     frontpage: 'verticalEyes',
     verkefni: 'verticalVerkefni',
-    thykjo: 'verticalThykjo',
+    thykjo: 'thykjoCaps',
+    'krakkarad-thykjo': 'krakkarad',
   }
 
   return (
