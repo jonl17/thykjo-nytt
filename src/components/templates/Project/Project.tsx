@@ -7,6 +7,7 @@ import SliceMapping from '@cmp/slices/sliceMapping'
 import FeaturedImage from '@cmp/site/FeaturedImage'
 import { Helmet } from 'react-helmet'
 import { Modal, useModal } from '@cmp/site/Modal'
+import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 
 const Project = ({ data }: { data: any }) => {
   const project = projectResolver(data.prismicProject)
@@ -39,11 +40,12 @@ const Project = ({ data }: { data: any }) => {
   )
 }
 
-export default Project
+export default withPrismicPreview(Project)
 
 export const query = graphql`
   query($id: String) {
     prismicProject(id: { eq: $id }) {
+      _previewable
       ...projectFragmentFull
     }
   }

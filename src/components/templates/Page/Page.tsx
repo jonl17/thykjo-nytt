@@ -9,6 +9,7 @@ import FeaturedImage from '@cmp/site/FeaturedImage'
 import { Helmet } from 'react-helmet'
 import { useEyeballs } from '@src/context/eyeBallContext'
 import useGetMenu from '@src/hooks/useGetMenu'
+import { withPrismicPreview } from 'gatsby-plugin-prismic-previews'
 
 const handleMouse = (x: number, pageWidth: number) => {
   const pos = (x / pageWidth) * 2
@@ -56,11 +57,12 @@ const Page = ({ data }: { data: any }) => {
   )
 }
 
-export default Page
+export default withPrismicPreview(Page)
 
 export const query = graphql`
   query($id: String) {
     prismicPage(id: { eq: $id }) {
+      _previewable
       ...pageFragmentFull
     }
   }
