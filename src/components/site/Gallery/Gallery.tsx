@@ -18,13 +18,13 @@ const Gallery = ({ images }: Props) => {
 
   return (
     <>
-      <div className='gallery'>
+      <div className='gallery mb-4'>
         <button className='w-100' onClick={() => updateImage(images[selected])}>
           <div className='gallery__image-wrap'>
             {images.map((image, key) => (
               <div
                 key={key}
-                className={cn('tilt gallery__image h-100 w-100', {
+                className={cn('tilt gallery__image w-100', {
                   'gallery__image--active': key === selected,
                 })}
               >
