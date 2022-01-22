@@ -17,6 +17,7 @@ export interface PageInterface {
   body: any[]
   bg: string
   featuredImage: IImage
+  showHeader: boolean
 }
 
 export const pageResolver = (node: any): PageInterface => ({
@@ -30,17 +31,20 @@ export const pageResolver = (node: any): PageInterface => ({
   body: node.data.body,
   bg: node.tags.find((tag: string) => tag.includes('bg-')) ?? 'bg-yellow',
   featuredImage: node.data.featured_image,
+  showHeader: node.data.show_header ?? true,
 })
 
 export interface MenuInterface {
   tags: string[]
   id: string
+  lang: string
   pages: PageInterface[]
 }
 
 export const menuResolver = (node: any): MenuInterface => ({
   id: node.id,
   tags: node.tags,
+  lang: node.lang,
   pages: node.data.pages.map((item: any) => pageResolver(item.page.document)),
 })
 
@@ -138,8 +142,10 @@ export interface SEOInterface {
   favicon: {
     url: string
   }
+  lang: string
 }
 
 export const seoResolver = (node: any): SEOInterface => ({
+  lang: node.lang,
   ...node.data,
 })

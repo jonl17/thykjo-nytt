@@ -39,7 +39,7 @@ const findProps = (slice: any) => {
       }
     case 'members':
       return {
-        title: slice.primary.title,
+        title: slice.primary.title.text,
         members: slice.items.map((item: any) =>
           memberResolver(item.member.document)
         ),
