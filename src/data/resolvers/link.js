@@ -9,10 +9,15 @@ const linkResolver = doc => {
   const project = doc.type === 'project'
 
   if (isFrontpage) {
-    return '/'
+    return doc.lang === defaultLanguage ? '/' : `/${doc.lang}`
   } else if (project) {
-    return `/verkefni/${doc.uid}`
-  } else return `/${doc.uid}`
+    return doc.lang === defaultLanguage
+      ? `/verkefni/${doc.uid}`
+      : `/${doc.lang}/projects/${doc.uid}`
+  } else
+    return doc.lang === defaultLanguage
+      ? `/${doc.uid}`
+      : `/${doc.lang}/${doc.uid}`
 }
 
 module.exports = linkResolver
