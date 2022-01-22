@@ -7,6 +7,7 @@ import Feature from '@cmp/site/Feature'
 import { memberResolver, projectResolver } from '@src/data/resolvers'
 import Gallery from '@cmp/site/Gallery'
 import Projects from '@cmp/slices/Projects'
+import Media, { MediaProps } from '@cmp/slices/Media'
 
 type SliceProps = {
   slice_type: string
@@ -16,6 +17,12 @@ type SliceProps = {
 
 const findProps = (slice: any) => {
   switch (slice.slice_type) {
+    case 'media': {
+      const props: MediaProps = {
+        image: slice.primary.image,
+      }
+      return props
+    }
     case 'program':
       return {
         programName: slice.primary.program_name,
@@ -75,6 +82,7 @@ const SliceMapping = ({ slice }: { slice: SliceProps }) => {
     members: Members,
     feature: Feature,
     projects: Projects,
+    media: Media,
   }
 
   const Cmp = sliceTypes[slice.slice_type]
