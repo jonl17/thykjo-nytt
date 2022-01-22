@@ -11,7 +11,7 @@ export type MediaProps = {
 
 const Media = ({ image }: MediaProps) => {
   return (
-    <div className='media mb-3'>
+    <div className='media mb-3 mt-n3 mt-lg-0'>
       <GatsbyImage
         className='h-100 w-100'
         image={image.gatsbyImageData}

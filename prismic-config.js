@@ -12,8 +12,8 @@ const schemas = {
 module.exports = {
   repositoryName: PRISMIC_REPO_NAME,
   accessToken: PRISMIC_ACCESS_TOKEN,
-  defaultLanguage: 'en-us',
-  langs: ['en-us'],
+  defaultLanguage: 'is',
+  langs: ['is', 'en-us'],
   defaultFrontpageTag: 'FRONTPAGE',
   schemas,
 }
