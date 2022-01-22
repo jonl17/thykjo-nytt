@@ -43,7 +43,7 @@ const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
 }
 
 const Menu: React.FC<{ ctx: any }> = ({ children, ctx }) => {
-  const menu = useGetMenu()
+  const menu = useGetMenu(ctx.lang)
 
   return (
     <div className='d-flex'>

@@ -3,7 +3,6 @@ import Menu from '@cmp/site/Menu'
 import cn from 'classnames'
 import MobileMenu from '@cmp/site/MobileMenu'
 import SEO from '@cmp/site/SEO'
-import { Modal } from '@cmp/site/Modal'
 import { Helmet } from 'react-helmet'
 
 type PageProps = {
@@ -13,6 +12,7 @@ type PageProps = {
     url: string
     tags: string[]
     type: string
+    lang: string
   }
 }
 
@@ -30,7 +30,7 @@ const MainLayout: React.FC<PageProps> = ({ children, pageContext }) => {
 
   return (
     <>
-      <SEO />
+      <SEO lang={pageContext.lang} />
       <Helmet>
         <html
           className={cn(`page__${bg} noise`, {
@@ -55,7 +55,7 @@ const MainLayout: React.FC<PageProps> = ({ children, pageContext }) => {
             'page__bg-red noise': pageContext.type === 'project',
           })}
         >
-          <MobileMenu />
+          <MobileMenu lang={pageContext.lang} />
           <div className='mobile-page'>{children}</div>
         </div>
       </main>

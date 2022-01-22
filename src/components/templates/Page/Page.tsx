@@ -17,7 +17,7 @@ const handleMouse = (x: number, pageWidth: number) => {
   return xCord
 }
 
-const Page = ({ data }: { data: any }) => {
+const Page = ({ data, pageContext }: { data: any; pageContext: any }) => {
   const page = pageResolver(data.prismicPage)
 
   let pageRef = useRef<HTMLDivElement>(null)
@@ -25,7 +25,7 @@ const Page = ({ data }: { data: any }) => {
   const { updateX } = useEyeballs()
 
   // total width of current page has to be subtracted by the total width of vertical menu items
-  const menu = useGetMenu()
+  const menu = useGetMenu(pageContext.lang)
   const MENU_ITEM_WIDTH = 100
   const MENU_OFFSET = (menu.pages.length - 1) * MENU_ITEM_WIDTH
 
@@ -45,7 +45,9 @@ const Page = ({ data }: { data: any }) => {
         }
         ref={pageRef}
       >
-        {page.title && <Head title={page.title} description={page.subtitle} />}
+        {page.title && page.showHeader && (
+          <Head title={page.title} description={page.subtitle} />
+        )}
         {page.featuredImage.url && <FeaturedImage {...page.featuredImage} />}
         <div className='d-flex flex-wrap'>
           {page.body.map((slice, i) => (

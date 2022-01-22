@@ -5,14 +5,15 @@ import Feature from '@cmp/site/Feature'
 
 type Props = {
   members: MemberInterface[]
+  title: string
 }
 
-const Members = ({ members }: Props) => {
+const Members = ({ members, title }: Props) => {
   return (
     <>
       <div className='members slice-gap position-relative w-100'>
         <div className='d-flex flex-column align-items-center mb-4'>
-          <h2 className='text-center mb-2'>Teymið</h2>
+          <h2 className='text-center mb-2'>{title}</h2>
           <Icon type='line' />
         </div>
         <div>

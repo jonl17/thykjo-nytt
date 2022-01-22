@@ -10,6 +10,7 @@ export const fragment = graphql`
     lang
     tags
     data {
+      show_header
       page_title {
         text
       }

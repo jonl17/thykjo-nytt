@@ -7,9 +7,9 @@ import { useLocation } from '@reach/router'
 import ContactInformation from '@cmp/site/ContactInformation'
 import useLockBodyScroll from '@src/hooks/useLockBodyScroll'
 
-const MobileMenu = () => {
+const MobileMenu = ({ lang }: { lang: string }) => {
   const [open, setOpen] = useState(false)
-  const menu = useGetMenu()
+  const menu = useGetMenu(lang)
   const { pathname } = useLocation()
 
   const MenuItems = () => {

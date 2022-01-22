@@ -2,18 +2,28 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 import '@src/data/fragments/seo'
-import { seoResolver } from '@src/data/resolvers'
+import { SEOInterface, seoResolver } from '@src/data/resolvers'
 
-const SEO = () => {
+type SEOProps = {
+  lang: string
+}
+
+const SEO = ({ lang }: SEOProps) => {
   const data = useStaticQuery(graphql`
     {
-      prismicSeo {
-        ...seoFragment
+      allPrismicSeo {
+        nodes {
+          ...seoFragment
+        }
       }
     }
   `)
 
-  const meta = seoResolver(data.prismicSeo)
+  const metas: SEOInterface[] = data.allPrismicSeo.nodes.map((node: any) =>
+    seoResolver(node)
+  )
+
+  const meta = metas.find(seo => seo.lang === lang) ?? metas[0]
 
   return (
     <Helmet>
