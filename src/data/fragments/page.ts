@@ -39,6 +39,30 @@ export const fragment = graphql`
         ... on PrismicPageDataBodyMedia {
           ...pageMediaSlice
         }
+        ... on PrismicPageDataBodyFeature {
+          ...pageFeatureSlice
+        }
+      }
+    }
+  }
+
+  fragment pageFeatureSlice on PrismicPageDataBodyFeature {
+    slice_type
+    id
+    primary {
+      image_right
+      text {
+        html
+      }
+    }
+    items {
+      image {
+        alt
+        url
+        gatsbyImageData
+      }
+      caption {
+        html
       }
     }
   }

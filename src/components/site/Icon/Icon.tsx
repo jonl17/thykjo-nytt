@@ -20,6 +20,7 @@ import {
   DynamicEyes,
   KrakkaradThykjo,
   ThykjoCaps,
+  Projects,
 } from './svg'
 import cn from 'classnames'
 
@@ -44,6 +45,7 @@ export type IconType =
   | 'dynamicEyes'
   | 'krakkarad'
   | 'thykjoCaps'
+  | 'projects'
 interface Props {
   type: IconType
   className?: string
@@ -71,6 +73,7 @@ const Icon = ({ type, className }: Props) => {
     dynamicEyes: DynamicEyes,
     krakkarad: KrakkaradThykjo,
     thykjoCaps: ThykjoCaps,
+    projects: Projects,
   }
 
   const IconSvg = icons[type]

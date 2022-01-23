@@ -41,7 +41,7 @@
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
-        "labels": null,
+        "labels": {},
         "choices": {
           "program": {
             "type": "Slice",
@@ -169,6 +169,50 @@
               }
             },
             "repeat": {}
+          },
+          "feature": {
+            "type": "Slice",
+            "fieldset": "Feature",
+            "description": "Add gallery and text, align left or right.",
+            "icon": "chrome_reader_mode",
+            "display": "list",
+            "non-repeat": {
+              "image_right": {
+                "type": "Boolean",
+                "config": {
+                  "default_value": false,
+                  "label": "Image right"
+                }
+              },
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item,rtl",
+                  "allowTargetBlank": true,
+                  "label": "Text"
+                }
+              }
+            },
+            "repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 2000
+                  },
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              },
+              "caption": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink",
+                  "allowTargetBlank": true,
+                  "label": "Caption"
+                }
+              }
+            }
           }
         }
       }
