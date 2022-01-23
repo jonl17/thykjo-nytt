@@ -1,0 +1,12 @@
+.language-button {
+  position: absolute;
+  top: $spacer;
+  left: $spacer;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-weight: 500;
+  * {
+    color: $black;
+  }
+}

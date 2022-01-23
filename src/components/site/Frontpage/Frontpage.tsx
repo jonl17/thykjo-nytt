@@ -2,6 +2,7 @@ import React from 'react'
 import Icon from '@cmp/site/Icon'
 import ContactInformation from '@cmp/site/ContactInformation'
 import { useEyeballs } from '@src/context/eyeBallContext'
+import LanguageButton from '../LanguageButton'
 
 const Frontpage = () => {
   const { useMoveEyes } = useEyeballs()
@@ -11,6 +12,7 @@ const Frontpage = () => {
   return (
     <>
       <div className='d-none d-lg-block w-100 h-100'>
+        <LanguageButton />
         <div className='frontpage h-100 w-100'>
           <div className='frontpage__grid'>
             <div className='frontpage__desktop-logos my-3'>

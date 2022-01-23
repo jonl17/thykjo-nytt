@@ -6,6 +6,7 @@ import { Link } from 'gatsby'
 import { useLocation } from '@reach/router'
 import ContactInformation from '@cmp/site/ContactInformation'
 import useLockBodyScroll from '@src/hooks/useLockBodyScroll'
+import LanguageButton from '../LanguageButton'
 
 const MobileMenu = ({ lang }: { lang: string }) => {
   const [open, setOpen] = useState(false)
@@ -47,12 +48,15 @@ const MobileMenu = ({ lang }: { lang: string }) => {
       })}
     >
       <div className='mobile-menu__header d-flex align-items-center justify-content-between'>
-        {!open && pathname !== '/' ? (
+        {!open && pathname !== '/' && pathname !== '/en' ? (
           <Link to='/'>
             <Icon className='mobile-menu__eyes py-2' type='eyes' />
           </Link>
         ) : (
-          <span />
+          <>
+            <span />
+            <LanguageButton />
+          </>
         )}
         <button onClick={() => setOpen(!open)} className='mobile-menu__burger'>
           <Icon type={open ? 'burgerEx' : 'burger'} />
