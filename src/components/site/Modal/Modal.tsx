@@ -56,7 +56,6 @@ const Modal: React.FC = ({ children }) => {
                 alt={image.alt ?? ''}
               />
             </div>
-            <p>HELLo</p>
           </div>
         )}
       </div>
