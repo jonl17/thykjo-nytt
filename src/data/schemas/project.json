@@ -32,7 +32,7 @@
       "type": "Image",
       "config": {
         "constraint": {
-          "width": 900,
+          "width": null,
           "height": null
         },
         "thumbnails": [
@@ -185,6 +185,13 @@
             "icon": "perm_media",
             "display": "list",
             "non-repeat": {
+              "smaller": {
+                "type": "Boolean",
+                "config": {
+                  "default_value": false,
+                  "label": "smaller"
+                }
+              },
               "image": {
                 "type": "Image",
                 "config": {

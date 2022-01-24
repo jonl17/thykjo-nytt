@@ -71,6 +71,7 @@ export const fragment = graphql`
     slice_type
     id
     primary {
+      smaller
       image {
         url
         alt

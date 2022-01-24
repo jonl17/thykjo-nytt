@@ -20,6 +20,7 @@ const findProps = (slice: any) => {
     case 'media': {
       const props: MediaProps = {
         image: slice.primary.image,
+        smaller: slice.primary.smaller,
       }
       return props
     }
