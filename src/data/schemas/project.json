@@ -9,7 +9,7 @@
     "title": {
       "type": "StructuredText",
       "config": {
-        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
         "label": "Title"
       }
     },
@@ -23,7 +23,7 @@
     "short_description": {
       "type": "StructuredText",
       "config": {
-        "single": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, embed, list-item, o-list-item, rtl",
+        "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,rtl",
         "allowTargetBlank": true,
         "label": "Short description"
       }
@@ -77,7 +77,7 @@
               "caption": {
                 "type": "StructuredText",
                 "config": {
-                  "multi": "paragraph, preformatted",
+                  "multi": "paragraph,preformatted",
                   "allowTargetBlank": true,
                   "label": "Caption"
                 }
@@ -127,7 +127,7 @@
               "text": {
                 "type": "StructuredText",
                 "config": {
-                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, embed, list-item, o-list-item, rtl",
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,rtl",
                   "allowTargetBlank": true,
                   "label": "Text"
                 }
@@ -140,7 +140,6 @@
             "fieldset": "Feature",
             "description": "Add gallery and text, align left or right.",
             "icon": "chrome_reader_mode",
-            "display": "list",
             "non-repeat": {
               "image_right": {
                 "type": "Boolean",
@@ -152,7 +151,7 @@
               "text": {
                 "type": "StructuredText",
                 "config": {
-                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, list-item, o-list-item, rtl",
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item,rtl",
                   "allowTargetBlank": true,
                   "label": "Text"
                 }
@@ -172,12 +171,30 @@
               "caption": {
                 "type": "StructuredText",
                 "config": {
-                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink",
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink",
                   "allowTargetBlank": true,
                   "label": "Caption"
                 }
               }
             }
+          },
+          "media": {
+            "type": "Slice",
+            "fieldset": "Media",
+            "description": "Add image",
+            "icon": "perm_media",
+            "display": "list",
+            "non-repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              }
+            },
+            "repeat": {}
           }
         }
       }
