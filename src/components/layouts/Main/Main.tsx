@@ -4,6 +4,8 @@ import cn from 'classnames'
 import MobileMenu from '@cmp/site/MobileMenu'
 import SEO from '@cmp/site/SEO'
 import { Helmet } from 'react-helmet'
+import { Modal, useModal } from '@cmp/site/Modal'
+import { useLocation } from '@reach/router'
 
 type PageProps = {
   pageContext: {
@@ -28,6 +30,14 @@ const MainLayout: React.FC<PageProps> = ({ children, pageContext }) => {
     }
   }, [pageContext])
 
+  const { image, updateImage } = useModal()
+
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    updateImage(null)
+  }, [pathname])
+
   return (
     <>
       <SEO lang={pageContext.lang} />
@@ -43,6 +53,7 @@ const MainLayout: React.FC<PageProps> = ({ children, pageContext }) => {
           })}
         />
       </Helmet>
+      {image && <Modal />}
       <main>
         {/* this menu is only available on desktop */}
         <div className='d-none d-lg-block'>
