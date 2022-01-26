@@ -27,6 +27,7 @@ const ContactInformation = () => {
             href={item.url}
             target='_blank'
             aria-label='social media link'
+            rel='noopener'
           >
             <Icon className='w-100' type={item.platform} />
           </a>
