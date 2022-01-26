@@ -58,7 +58,11 @@ const MobileMenu = ({ lang }: { lang: string }) => {
             <LanguageButton />
           </>
         )}
-        <button onClick={() => setOpen(!open)} className='mobile-menu__burger'>
+        <button
+          aria-label='Open mobile menu'
+          onClick={() => setOpen(!open)}
+          className='mobile-menu__burger'
+        >
           <Icon type={open ? 'burgerEx' : 'burger'} />
         </button>
       </div>

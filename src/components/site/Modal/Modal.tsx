@@ -41,6 +41,7 @@ const Modal: React.FC = ({ children }) => {
 
   return (
     <button
+      aria-label='Open fullscreen image modal'
       className='modal-window__close-btn'
       onClick={() => updateImage(null)}
     >

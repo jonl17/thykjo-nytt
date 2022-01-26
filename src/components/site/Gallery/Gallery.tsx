@@ -19,7 +19,11 @@ const Gallery = ({ images }: Props) => {
   return (
     <>
       <div className='gallery mb-4'>
-        <button className='w-100' onClick={() => updateImage(images[selected])}>
+        <button
+          aria-label='Open fullscreen image modal'
+          className='w-100'
+          onClick={() => updateImage(images[selected])}
+        >
           <div className='gallery__image-wrap'>
             {images.map((image, key) => (
               <div
@@ -41,6 +45,7 @@ const Gallery = ({ images }: Props) => {
           {images.length > 1 &&
             images.map((_, index) => (
               <button
+                aria-label='Select another image in the gallery'
                 key={index}
                 onClick={() => setSelected(index)}
                 className='p-1'
