@@ -22,7 +22,12 @@ const ContactInformation = () => {
         aria-label='social media links'
       >
         {information.socialMedia.map(item => (
-          <a key={item.url} href={item.url} target='_blank'>
+          <a
+            key={item.url}
+            href={item.url}
+            target='_blank'
+            aria-label='social media link'
+          >
             <Icon className='w-100' type={item.platform} />
           </a>
         ))}
