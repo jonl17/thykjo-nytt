@@ -43,6 +43,7 @@ const MainLayout: React.FC<PageProps> = ({ children, pageContext }) => {
       <SEO lang={pageContext.lang} />
       <Helmet>
         <html
+          lang='is'
           className={cn(`page__${bg} noise`, {
             'page__bg-red noise': pageContext.type === 'project',
           })}

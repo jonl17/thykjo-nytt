@@ -17,7 +17,10 @@ const ContactInformation = () => {
 
   return (
     <div className='contact-information'>
-      <div className='contact-information__grid mb-2'>
+      <div
+        className='contact-information__grid mb-2'
+        aria-label='social media links'
+      >
         {information.socialMedia.map(item => (
           <a key={item.url} href={item.url} target='_blank'>
             <Icon className='w-100' type={item.platform} />
