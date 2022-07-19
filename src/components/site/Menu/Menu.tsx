@@ -19,6 +19,7 @@ const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
     thykjo: 'thykjoCaps',
     'krakkarad-thykjo': 'krakkarad',
     projects: 'projects',
+    workshops: 'projects',
   }
 
   return (
@@ -49,13 +50,17 @@ const Menu: React.FC<{ ctx: any }> = ({ children, ctx }) => {
   return (
     <div className='d-flex'>
       {menu.pages.map(page => (
-        <MenuItem key={page.id} page={page}>
-          {children}
-        </MenuItem>
+        <>
+          <MenuItem key={page.id} page={page}>
+            {children}
+          </MenuItem>
+          {page.subpageType === ctx.type && (
+            <div className={cn('noise project', `page__${page.bg}`)}>
+              {children}
+            </div>
+          )}
+        </>
       ))}
-      {ctx.type === 'project' && (
-        <div className='noise project page__bg-red'>{children}</div>
-      )}
     </div>
   )
 }
