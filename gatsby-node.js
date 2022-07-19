@@ -14,6 +14,11 @@ exports.createPages = async ({ graphql, actions }) => {
     './src/components/templates/Project/Project.tsx'
   )
 
+  const workshopTemplate = path.resolve(
+    __dirname,
+    './src/components/templates/Workshop/Workshop.tsx'
+  )
+
   // queries
   const pages = await graphql(`
     {
@@ -45,6 +50,21 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+  const workshops = await graphql(`
+    {
+      allPrismicWorkshop {
+        nodes {
+          uid
+          tags
+          lang
+          url
+          id
+          type
+        }
+      }
+    }
+  `)
+
   // create pages
   pages.data.allPrismicPage.nodes.forEach(node => {
     createPage({
@@ -60,6 +80,16 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: node.url,
       component: projectTemplate,
+      context: {
+        ...node,
+      },
+    })
+  })
+
+  workshops.data.allPrismicWorkshop.nodes.forEach(node => {
+    createPage({
+      path: node.url,
+      component: workshopTemplate,
       context: {
         ...node,
       },

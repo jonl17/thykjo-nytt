@@ -18,6 +18,7 @@ export const wrapRootElement = ({ element }) => (
         linkResolver,
         componentResolver: componentResolverFromMap({
           page: PageTemplate,
+          project: ProjectTemplate,
         }),
       },
     ]}
