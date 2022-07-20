@@ -41,7 +41,7 @@
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
-        "labels": {},
+        "labels": null,
         "choices": {
           "program": {
             "type": "Slice",
@@ -216,6 +216,24 @@
                   "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink",
                   "allowTargetBlank": true,
                   "label": "Caption"
+                }
+              }
+            }
+          },
+          "workshops": {
+            "type": "Slice",
+            "fieldset": "Workshops",
+            "description": "Display workshops",
+            "icon": "wc",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "workshop": {
+                "type": "Link",
+                "config": {
+                  "select": "document",
+                  "customtypes": ["workshop"],
+                  "label": "workshop"
                 }
               }
             }

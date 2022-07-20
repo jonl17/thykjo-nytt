@@ -19,7 +19,8 @@ const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
     thykjo: 'thykjoCaps',
     'krakkarad-thykjo': 'krakkarad',
     projects: 'projects',
-    workshops: 'projects',
+    workshops: 'workshops',
+    smidjur: 'smidjur',
   }
 
   return (
