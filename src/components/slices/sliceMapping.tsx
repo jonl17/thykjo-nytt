@@ -90,8 +90,6 @@ const SliceMapping = ({ slice }: { slice: SliceProps }) => {
 
   const props = findProps(slice)
 
-  console.log(props)
-
   if (!Cmp) return null
 
   return <Cmp {...props} />
