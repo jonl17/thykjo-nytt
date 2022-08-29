@@ -41,7 +41,7 @@
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
-        "labels": {},
+        "labels": null,
         "choices": {
           "program": {
             "type": "Slice",
@@ -79,7 +79,9 @@
                 "type": "Link",
                 "config": {
                   "select": "document",
-                  "customtypes": ["member"],
+                  "customtypes": [
+                    "member"
+                  ],
                   "label": "Member"
                 }
               }
@@ -110,7 +112,11 @@
               "paragraph_style": {
                 "type": "Select",
                 "config": {
-                  "options": ["wide", "slim", "center"],
+                  "options": [
+                    "wide",
+                    "slim",
+                    "center"
+                  ],
                   "default_value": "wide",
                   "label": "Paragraph style"
                 }
@@ -118,7 +124,11 @@
               "font_size": {
                 "type": "Select",
                 "config": {
-                  "options": ["normal", "small", "large"],
+                  "options": [
+                    "normal",
+                    "small",
+                    "large"
+                  ],
                   "default_value": "normal",
                   "label": "Font size"
                 }
@@ -146,7 +156,9 @@
                 "type": "Link",
                 "config": {
                   "select": "document",
-                  "customtypes": ["project"],
+                  "customtypes": [
+                    "project"
+                  ],
                   "label": "Project"
                 }
               }
@@ -216,6 +228,26 @@
                   "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink",
                   "allowTargetBlank": true,
                   "label": "Caption"
+                }
+              }
+            }
+          },
+          "workshops": {
+            "type": "Slice",
+            "fieldset": "Workshops",
+            "description": "Display workshops",
+            "icon": "wc",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "workshop": {
+                "type": "Link",
+                "config": {
+                  "select": "document",
+                  "customtypes": [
+                    "workshop"
+                  ],
+                  "label": "workshop"
                 }
               }
             }
