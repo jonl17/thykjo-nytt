@@ -7,6 +7,7 @@ const schemas = {
   menu: require('./src/data/schemas/menu.json'),
   project: require('./src/data/schemas/project.json'),
   seo: require('./src/data/schemas/seo.json'),
+  workshop: {}
 }
 
 module.exports = {
