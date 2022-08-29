@@ -21,6 +21,8 @@ import {
   KrakkaradThykjo,
   ThykjoCaps,
   Projects,
+  VerticalWorkshops,
+  Smidjur,
 } from './svg'
 import cn from 'classnames'
 
@@ -46,6 +48,8 @@ export type IconType =
   | 'krakkarad'
   | 'thykjoCaps'
   | 'projects'
+  | 'workshops'
+  | 'smidjur'
 interface Props {
   type: IconType
   className?: string
@@ -74,6 +78,8 @@ const Icon = ({ type, className }: Props) => {
     krakkarad: KrakkaradThykjo,
     thykjoCaps: ThykjoCaps,
     projects: Projects,
+    workshops: VerticalWorkshops,
+    smidjur: Smidjur,
   }
 
   const IconSvg = icons[type]

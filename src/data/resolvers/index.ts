@@ -18,6 +18,16 @@ export interface PageInterface {
   bg: string
   featuredImage: IImage
   showHeader: boolean
+  subpageType?: string
+}
+
+const subpageTypeFinder = (tags: string[]) => {
+  const keyword = 'subpage_type_'
+  const tag = tags.find(tag => tag.includes(keyword))
+  if (tag) {
+    return tag.replace(keyword, '')
+  }
+  return tag
 }
 
 export const pageResolver = (node: any): PageInterface => ({
@@ -32,6 +42,7 @@ export const pageResolver = (node: any): PageInterface => ({
   bg: node.tags.find((tag: string) => tag.includes('bg-')) ?? 'bg-yellow',
   featuredImage: node.data.featured_image,
   showHeader: node.data.show_header ?? true,
+  subpageType: subpageTypeFinder(node.tags),
 })
 
 export interface MenuInterface {
@@ -148,4 +159,36 @@ export interface SEOInterface {
 export const seoResolver = (node: any): SEOInterface => ({
   lang: node.lang,
   ...node.data,
+})
+
+export interface WorkshopInterface {
+  id: string
+  uid: string
+  tags: string[]
+  lang: string
+  url: string
+  title: {
+    text: string
+    html: string
+  }
+  shortDescription: {
+    text: string
+    html: string
+  }
+  type: string
+  featuredImage: IImage
+  body: any[]
+}
+
+export const workshopResolver = (node: any): WorkshopInterface => ({
+  id: node.id,
+  uid: node.uid,
+  tags: node.tags,
+  lang: node.lang,
+  url: node.url,
+  title: node.data.title,
+  shortDescription: node.data.short_description,
+  type: node.data.type,
+  body: node.data.body,
+  featuredImage: node.data.featured_image,
 })

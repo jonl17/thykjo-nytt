@@ -6,85 +6,40 @@
         "label": "UID"
       }
     },
-    "page_title": {
+    "title": {
       "type": "StructuredText",
       "config": {
-        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
-        "label": "Page title"
+        "single": "heading1",
+        "label": "Title"
       }
     },
-    "subtitle": {
+    "type": {
       "type": "Text",
       "config": {
-        "label": "Subtitle"
+        "label": "type"
+      }
+    },
+    "short_description": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph,strong,em,list-item",
+        "label": "short description"
       }
     },
     "featured_image": {
       "type": "Image",
       "config": {
-        "constraint": {
-          "width": null,
-          "height": null
-        },
+        "constraint": {},
         "thumbnails": [],
-        "label": "Featured image"
-      }
-    },
-    "show_header": {
-      "type": "Boolean",
-      "config": {
-        "default_value": true,
-        "label": "Show header"
+        "label": "featured image"
       }
     },
     "body": {
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
-        "labels": null,
+        "labels": {},
         "choices": {
-          "program": {
-            "type": "Slice",
-            "fieldset": "Program",
-            "description": "Talk to the programmer before using!",
-            "icon": "directions_run",
-            "display": "list",
-            "non-repeat": {
-              "program_name": {
-                "type": "Text",
-                "config": {
-                  "label": "Program name"
-                }
-              }
-            },
-            "repeat": {}
-          },
-          "members": {
-            "type": "Slice",
-            "fieldset": "Members",
-            "description": "Add existing members into this slice.",
-            "icon": "people_outline",
-            "display": "list",
-            "non-repeat": {
-              "title": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "heading2",
-                  "label": "Title"
-                }
-              }
-            },
-            "repeat": {
-              "member": {
-                "type": "Link",
-                "config": {
-                  "select": "document",
-                  "customtypes": ["member"],
-                  "label": "Member"
-                }
-              }
-            }
-          },
           "heading": {
             "type": "Slice",
             "fieldset": "Heading",
@@ -134,54 +89,40 @@
             },
             "repeat": {}
           },
-          "projects": {
+          "gallery": {
             "type": "Slice",
-            "fieldset": "Projects",
-            "description": "Displays projects",
-            "icon": "border_all",
+            "fieldset": "Gallery",
+            "description": "Add images that open in a modal window.",
+            "icon": "aspect_ratio",
             "display": "list",
             "non-repeat": {},
             "repeat": {
-              "project": {
-                "type": "Link",
-                "config": {
-                  "select": "document",
-                  "customtypes": ["project"],
-                  "label": "Project"
-                }
-              }
-            }
-          },
-          "media": {
-            "type": "Slice",
-            "fieldset": "Media",
-            "description": "Add image",
-            "icon": "perm_media",
-            "non-repeat": {
-              "smaller": {
-                "type": "Boolean",
-                "config": {
-                  "default_value": false,
-                  "label": "smaller"
-                }
-              },
               "image": {
                 "type": "Image",
                 "config": {
-                  "constraint": {},
+                  "constraint": {
+                    "width": 900,
+                    "height": null
+                  },
                   "thumbnails": [],
                   "label": "Image"
                 }
+              },
+              "caption": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted",
+                  "allowTargetBlank": true,
+                  "label": "Caption"
+                }
               }
-            },
-            "repeat": {}
+            }
           },
           "feature": {
             "type": "Slice",
             "fieldset": "Feature",
             "description": "Add gallery and text, align left or right.",
             "icon": "chrome_reader_mode",
-            "display": "list",
             "non-repeat": {
               "image_right": {
                 "type": "Boolean",
@@ -220,23 +161,30 @@
               }
             }
           },
-          "workshops": {
+          "media": {
             "type": "Slice",
-            "fieldset": "Workshops",
-            "description": "Display workshops",
-            "icon": "wc",
+            "fieldset": "Media",
+            "description": "Add image",
+            "icon": "perm_media",
             "display": "list",
-            "non-repeat": {},
-            "repeat": {
-              "workshop": {
-                "type": "Link",
+            "non-repeat": {
+              "smaller": {
+                "type": "Boolean",
                 "config": {
-                  "select": "document",
-                  "customtypes": ["workshop"],
-                  "label": "workshop"
+                  "default_value": false,
+                  "label": "smaller"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Image"
                 }
               }
-            }
+            },
+            "repeat": {}
           }
         }
       }

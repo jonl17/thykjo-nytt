@@ -10,7 +10,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop --host 0.0.0.0",
-    "fart": "gatsby clean && yarn start",
+    "dev": "gatsby clean && yarn start",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
