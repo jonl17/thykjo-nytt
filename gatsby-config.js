@@ -28,6 +28,7 @@ const prismicPreviewsPlugin = {
 module.exports = {
   plugins: [
     'gatsby-plugin-typescript',
+    'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-plugin-layout',
       options: {
