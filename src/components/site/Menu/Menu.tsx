@@ -51,16 +51,14 @@ const Menu: React.FC<{ ctx: any }> = ({ children, ctx }) => {
   return (
     <div className='d-flex'>
       {menu.pages.map((page, key) => (
-        <>
-          <MenuItem key={key + page.id} page={page}>
-            {children}
-          </MenuItem>
+        <React.Fragment key={key + page.id}>
+          <MenuItem page={page}>{children}</MenuItem>
           {page.subpageType === ctx.type && (
             <div key={key} className={cn('noise project', `page__${page.bg}`)}>
               {children}
             </div>
           )}
-        </>
+        </React.Fragment>
       ))}
     </div>
   )

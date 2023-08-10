@@ -7,7 +7,6 @@ export interface WorkshopsProps {
 }
 
 const Workshops = ({ workshops }: WorkshopsProps) => {
-  console.log(workshops)
   return (
     <AllCustomTypes
       items={workshops.map(workshop => ({
