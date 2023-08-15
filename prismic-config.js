@@ -1,4 +1,8 @@
-const { PRISMIC_REPO_NAME, PRISMIC_ACCESS_TOKEN } = process.env
+const {
+  PRISMIC_REPO_NAME,
+  PRISMIC_ACCESS_TOKEN,
+  PRISMIC_CUSTOM_TYPES_API_TOKEN,
+} = process.env
 
 const schemas = {
   page: require('./src/data/schemas/page.json'),
@@ -17,4 +21,5 @@ module.exports = {
   langs: ['is', 'en-us'],
   defaultFrontpageTag: 'FRONTPAGE',
   schemas,
+  customTypesApiToken: PRISMIC_CUSTOM_TYPES_API_TOKEN,
 }

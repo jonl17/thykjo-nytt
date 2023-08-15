@@ -32,7 +32,7 @@ const AllCustomTypes = ({ items }: Props) => {
             </div>
             <div>
               <h3 className='mb-1'>{item.title}</h3>
-              <h4 className='mb-2'>{item.type}</h4>
+              {item.type !== 'page' && <h4 className='mb-2'>{item.type}</h4>}
               <div
                 dangerouslySetInnerHTML={{
                   __html: item.description.html,

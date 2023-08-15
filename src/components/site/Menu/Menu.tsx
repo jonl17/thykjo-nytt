@@ -16,7 +16,7 @@ const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
   const findIcon: { [key: string]: IconType } = {
     frontpage: 'verticalEyes',
     verkefni: 'verticalVerkefni',
-    thykjo: 'thykjoCaps',
+    thykjoo: 'thykjoCaps',
     'krakkarad-thykjo': 'krakkarad',
     projects: 'projects',
     workshops: 'workshops',
@@ -50,16 +50,21 @@ const Menu: React.FC<{ ctx: any }> = ({ children, ctx }) => {
 
   return (
     <div className='d-flex'>
-      {menu.pages.map((page, key) => (
-        <React.Fragment key={key + page.id}>
-          <MenuItem page={page}>{children}</MenuItem>
-          {page.subpageType === ctx.type && (
-            <div key={key} className={cn('noise project', `page__${page.bg}`)}>
-              {children}
-            </div>
-          )}
-        </React.Fragment>
-      ))}
+      {menu.pages.map((page, key) => {
+        return (
+          <React.Fragment key={key + page.id}>
+            <MenuItem page={page}>{children}</MenuItem>
+            {page.subpageType === ctx.type && (
+              <div
+                key={key}
+                className={cn('noise project', `page__${page.bg}`)}
+              >
+                {children}
+              </div>
+            )}
+          </React.Fragment>
+        )
+      })}
     </div>
   )
 }

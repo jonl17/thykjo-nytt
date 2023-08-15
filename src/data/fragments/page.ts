@@ -46,6 +46,39 @@ export const fragment = graphql`
         ... on PrismicPageDataBodyWorkshops {
           ...pageWorkshopsSlice
         }
+        ... on PrismicPageDataBodyPages {
+          ...pagePagesSlice
+        }
+      }
+    }
+  }
+
+  fragment pagePagesSlice on PrismicPageDataBodyPages {
+    slice_type
+    id
+    items {
+      page {
+        document {
+          ... on PrismicPage {
+            url
+            type
+            id
+            uid
+            tags
+            data {
+              featured_image {
+                alt
+                url
+                gatsbyImageData
+              }
+              page_title {
+                text
+              }
+              subtitle
+              show_header
+            }
+          }
+        }
       }
     }
   }

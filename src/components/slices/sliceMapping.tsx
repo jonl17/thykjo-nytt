@@ -6,6 +6,7 @@ import Members from './Members'
 import Feature from '@cmp/site/Feature'
 import {
   memberResolver,
+  pageResolver,
   projectResolver,
   workshopResolver,
 } from '@src/data/resolvers'
@@ -13,6 +14,7 @@ import Gallery from '@cmp/site/Gallery'
 import Projects from '@cmp/slices/Projects'
 import Media, { MediaProps } from '@cmp/slices/Media'
 import Workshops, { WorkshopsProps } from '@cmp/slices/Workshops'
+import Pages from './Pages'
 
 type SliceProps = {
   slice_type: string
@@ -74,6 +76,11 @@ const findProps = (slice: any) => {
           projectResolver(item.project.document)
         ),
       }
+    case 'pages': {
+      return {
+        pages: slice.items.map((item: any) => pageResolver(item.page.document)),
+      }
+    }
     case 'workshops':
       const props: WorkshopsProps = {
         workshops: slice.items.map((item: any) =>
@@ -96,6 +103,7 @@ const SliceMapping = ({ slice }: { slice: SliceProps }) => {
     projects: Projects,
     media: Media,
     workshops: Workshops,
+    pages: Pages,
   }
 
   const Cmp = sliceTypes[slice.slice_type]

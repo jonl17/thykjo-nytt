@@ -72,6 +72,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: pageTemplate,
       context: {
         ...node,
+        type: node.tags.includes('subpage') ? 'subpage' : node.type,
       },
     })
   })

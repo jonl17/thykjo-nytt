@@ -19,6 +19,7 @@ export interface PageInterface {
   featuredImage: IImage
   showHeader: boolean
   subpageType?: string
+  type?: string
 }
 
 const subpageTypeFinder = (tags: string[]) => {
