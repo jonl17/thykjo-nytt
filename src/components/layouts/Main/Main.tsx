@@ -46,11 +46,13 @@ const MainLayout: React.FC<PageProps> = ({ children, pageContext }) => {
           lang='is'
           className={cn(`page__${bg} noise`, {
             'page__bg-red noise': pageContext.type === 'project',
+            'page__bg-yellow noise': pageContext.type === 'workshop',
           })}
         />
         <body
           className={cn(`page__${bg} noise`, {
             'page__bg-red noise': pageContext.type === 'project',
+            'page__bg-yellow noise': pageContext.type === 'workshop',
           })}
         />
       </Helmet>

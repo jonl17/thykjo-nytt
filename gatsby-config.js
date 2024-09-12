@@ -1,7 +1,7 @@
 const path = require('path')
 
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env`,
 })
 
 const { accessToken, repositoryName, schemas } = require('./prismic-config')
@@ -28,6 +28,7 @@ const prismicPreviewsPlugin = {
 module.exports = {
   plugins: [
     'gatsby-plugin-typescript',
+    'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-plugin-layout',
       options: {

@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby'
 import './member'
 import './project'
+import './workshop'
 
 export const fragment = graphql`
   fragment pageFragmentFull on PrismicPage {
@@ -42,6 +43,9 @@ export const fragment = graphql`
         ... on PrismicPageDataBodyFeature {
           ...pageFeatureSlice
         }
+        ... on PrismicPageDataBodyWorkshops {
+          ...pageWorkshopsSlice
+        }
       }
     }
   }
@@ -76,6 +80,20 @@ export const fragment = graphql`
         url
         alt
         gatsbyImageData
+      }
+    }
+  }
+
+  fragment pageWorkshopsSlice on PrismicPageDataBodyWorkshops {
+    slice_type
+    id
+    items {
+      workshop {
+        document {
+          ... on PrismicWorkshop {
+            ...workshopFragmentFull
+          }
+        }
       }
     }
   }

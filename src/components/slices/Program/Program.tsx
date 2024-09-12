@@ -1,6 +1,5 @@
 import React from 'react'
 import Frontpage from '@cmp/site/Frontpage'
-import AllProjects from '@cmp/site/AllProjects'
 
 type Props = {
   programName: string
@@ -9,7 +8,6 @@ type Props = {
 const Program = ({ programName }: Props) => {
   const types: { [key: string]: React.ElementType } = {
     Frontpage,
-    AllProjects,
   }
 
   const SelectedProgram = types[programName]
