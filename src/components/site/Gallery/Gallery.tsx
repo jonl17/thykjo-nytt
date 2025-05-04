@@ -36,6 +36,7 @@ const Gallery = ({ images }: Props) => {
                   className='h-100 w-100'
                   image={image.gatsbyImageData}
                   alt={image.alt ?? ''}
+                  objectFit='contain'
                 />
               </div>
             ))}
