@@ -25,7 +25,7 @@ const Workshop = ({ data }: { data: any }) => {
       </Helmet>
       <div className='page h-100 m-auto position-relative pt-3 container'>
         <Head title={workshop.title.text} description={workshop.type} />
-        <FeaturedImage {...workshop.featuredImage} />
+        {/* <FeaturedImage {...workshop.featuredImage} /> */}
         <div className='d-flex flex-wrap w-100'>
           {workshop.body.map((slice, i) => (
             <SliceMapping key={i} slice={slice} />
@@ -39,7 +39,7 @@ const Workshop = ({ data }: { data: any }) => {
 export default withPrismicPreview(Workshop)
 
 export const query = graphql`
-  query($id: String) {
+  query ($id: String) {
     prismicWorkshop(id: { eq: $id }) {
       _previewable
       ...workshopFragmentFull
